@@ -1,12 +1,10 @@
 <p align="center">
-  <img src="docs/assets/logo.png" alt="AiGeovis logo" width="460"/>
+  <img src="docs/assets/logo.png" alt="AiGeovis" width="560"/>
 </p>
 
-<h1 align="center">AiGeovis</h1>
-
 <p align="center">
-  <b>AI-assisted geocoding &amp; collaboration-map visualization for Web of Science records</b><br/>
-  面向 WoS 文献地址的智能地理解析与合作网络可视化工具
+  <sub><b>AI-assisted geocoding &amp; collaboration-map visualization for Web of Science records</b></sub><br/>
+  <sub>面向 WoS 文献地址的智能地理解析与合作网络可视化工具</sub>
 </p>
 
 <p align="center">
@@ -15,11 +13,12 @@
   <img alt="Vue" src="https://img.shields.io/badge/Vue-3.4-42b883?logo=vuedotjs&logoColor=white"/>
   <img alt="Vite" src="https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white"/>
   <img alt="ECharts" src="https://img.shields.io/badge/ECharts-5-AA344D?logo=apacheecharts&logoColor=white"/>
-  <img alt="License" src="https://img.shields.io/badge/License-TBD-lightgrey"/>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
   <a href="https://github.com/Muzi828/AiGeovis"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-Muzi828%2FAiGeovis-181717?logo=github"/></a>
 </p>
 
 <p align="center">
+  <a href="#-overview">Overview</a> ·
   <a href="#-quick-start">Quick Start</a> ·
   <a href="#-features">Features</a> ·
   <a href="#-architecture">Architecture</a> ·
@@ -34,11 +33,28 @@
 
 **AiGeovis** 把 Web of Science（WoS）导出记录中的作者地址（C1 / C3）解析为国家、机构、城市等地理实体，并在 2D / 3D 地图上展示分布、热力与合作连线。
 
+**Online demo（已部署）：** [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home)
+
 | 输入 | 处理 | 输出 |
 |:----:|:----:|:----:|
 | WoS TXT / CSV / 本地地址表 | 参考库匹配 → 多模型 LLM 解析 → 地理编码补全 | 解析结果表 · 实体矩阵 · 地图可视化 · GML |
 
 适合文献计量、科研合作网络、机构/国家空间分布等场景；内置 Demo 数据，可零上传先体验全流程。
+
+<p align="center"><b>Main workspace · 2D collaboration map</b></p>
+<p align="center">
+  <img src="docs/assets/ui-2d-map.png" width="92%" alt="AiGeovis 2D map workspace"/>
+</p>
+
+<p align="center"><b>3D globe · country / region network</b></p>
+<p align="center">
+  <img src="docs/assets/ui-3d-globe.png" width="92%" alt="AiGeovis 3D globe"/>
+</p>
+
+<p align="center"><b>Raw data table · imported WoS records</b></p>
+<p align="center">
+  <img src="docs/assets/ui-raw-table.png" width="92%" alt="AiGeovis raw data table"/>
+</p>
 
 ---
 
@@ -56,23 +72,25 @@
 |:--------:|:--------------:|
 | <img src="docs/assets/map-affiliations-aigeovis.png" width="100%" alt="Affiliations — AiGeovis"/> | <img src="docs/assets/map-affiliations-wos.png" width="100%" alt="Affiliations — WoS"/> |
 
-> 上图来自仓库 `Verified Results/` 中的对照样例，便于复现与论文插图引用。
+> 对照样例来自仓库 `Verified Results/`，便于复现与论文插图引用。
 
 ---
 
 ## Features
 
-```text
-┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
-│  Data Ingest     │   │  Geo Parsing     │   │  Visualization   │
-│  WoS / CSV / Demo│ → │  Cache + LLM × N │ → │  Map / Heat / 3D │
-└──────────────────┘   └──────────────────┘   └──────────────────┘
-```
+<p align="center">
+  <img src="docs/assets/fig5-pipeline.png" width="96%" alt="AiGeovis processing pipeline (Fig. 5)"/>
+</p>
+
+<p align="center">
+  <sub>Figure 5. AiGeovis processing pipeline and dual-channel geoparsing design</sub>
+</p>
 
 - **多源加载**：WoS 导出文件、本地地址 CSV、一键 Demo / 自定义案例
 - **分层解析**：C1（国家 / 机构 / 城市）与 C3（机构）独立任务；可批量或按层启动
+- **双通道地理解析**：规则基线 + 多模型 LLM；校验失败可重试，并支持 Nominatim / 高德确定性补全
 - **增量匹配**：只读 `affiliation_cache.db` 优先命中坐标，未命中再走大模型
-- **多模型并行**：DeepSeek / Qwen / OpenAI / Anthropic / Custom 等可配置轮询
+- **合作网络**：篇内共现边权 → 实体矩阵 / edge list / GML
 - **地图可视化**：散点、热力、合作连线（线宽按共现权重自适应）、三维地球
 - **结果导出**：解析表 CSV、实体共现矩阵、GML 下载
 - **中英界面**：进度日志与部分 UI 文案支持 `zh` / `en`
@@ -175,7 +193,8 @@ VITE_DISABLE_AUTH=true
 ```text
 AiGeovis_code/
 ├── README.md
-├── docs/assets/                 # README 配图
+├── LICENSE                      # Apache License 2.0
+├── docs/assets/                 # README 配图与界面截图
 ├── AiGeovis_frontend/           # Vue 前端
 │   ├── src/views/HomeView.vue   # 主工作台
 │   ├── src/views/VizView.vue    # 地图可视化
@@ -199,10 +218,10 @@ AiGeovis_code/
 
 ## Demo Walkthrough
 
-1. 打开前端 → **打开案例**（WoS Demo）或 **自定义地址案例**
-2. 左侧选择 C1 / C3 与解析层级 → **启动解析**（Demo 已预解析时可直接看图）
-3. 右侧切换 **散点 / 热力 / 三维**，调节节点大小、连线粗细与颜色
-4. 使用 **数据列表 / 导出** 查看或下载结果
+1. 打开前端（或线上 Demo）→ **Open Demo**（WoS）或自定义地址案例
+2. 左侧选择 C1 / C3 与解析层级 → **Start Parse**（Demo 已预解析时可直接看图）
+3. 右侧切换 **Map / 3D Map / Density**，调节节点大小、连线粗细与颜色
+4. 使用 **Open Table / Export** 查看或下载结果
 
 | Demo 资源 | 路径 / API |
 |-----------|------------|
@@ -263,6 +282,7 @@ CSV 需包含：`coords_countries.csv`、`coords_affiliations.csv`、`coords_aff
 
 | 项 | 值 |
 |----|----|
+| Online demo | [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home) |
 | Frontend URL | `http://<host>:8939/AiGeovis/` |
 | Backend URL | `http://<host>:35696` |
 | API Base (dev) | `http://<host>:35696/api` |
@@ -274,7 +294,7 @@ CSV 需包含：`coords_countries.csv`、`coords_affiliations.csv`、`coords_aff
 ## Roadmap / Notes for Contributors
 
 - [ ] 补齐生产环境前端静态资源 Docker / Nginx 示例
-- [ ] 为公开仓库填写 License 与正式引用条目
+- [ ] 为公开仓库补充正式论文引用条目（DOI）
 - [ ] CI：后端 health + 前端 build 冒烟
 
 欢迎 Issue / PR。提交前请避免把 API Key、`.env*`、`affiliation_cache.db`、`node_modules` 推入远程。
@@ -294,7 +314,7 @@ Verified Results/SoftwareX_2025_450/
 
 ## License
 
-License 待定（上传公开仓库前请补充 `LICENSE` 文件）。
+本项目采用 [Apache License 2.0](LICENSE) 开源协议。
 
 ---
 
