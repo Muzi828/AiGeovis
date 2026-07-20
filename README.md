@@ -70,13 +70,13 @@ AiGeovis parses author affiliations (C1 / C3) from records exported by Web of Sc
 
 | AiGeovis | Web of Science |
 |:--------:|:--------------:|
-| <a href="docs/assets/map-countries-aigeovis.png"><img src="docs/assets/map-countries-aigeovis.png" width="420" alt="Countries — AiGeovis"/></a> | <a href="docs/assets/map-countries-wos.png"><img src="docs/assets/map-countries-wos.png" width="420" alt="Countries — WoS"/></a> |
+| <a href="docs/assets/map-countries-aigeovis.png"><img src="docs/assets/map-countries-aigeovis.png" width="420" height="215" alt="Countries — AiGeovis"/></a> | <a href="docs/assets/map-countries-wos.png"><img src="docs/assets/map-countries-wos.png" width="420" height="215" alt="Countries — WoS"/></a> |
 
 <p align="center"><b>Organizations</b></p>
 
 | AiGeovis | Web of Science |
 |:--------:|:--------------:|
-| <a href="docs/assets/map-affiliations-aigeovis.png"><img src="docs/assets/map-affiliations-aigeovis.png" width="420" alt="Affiliations — AiGeovis"/></a> | <a href="docs/assets/map-affiliations-wos.png"><img src="docs/assets/map-affiliations-wos.png" width="420" alt="Affiliations — WoS"/></a> |
+| <a href="docs/assets/map-affiliations-aigeovis.png"><img src="docs/assets/map-affiliations-aigeovis.png" width="420" height="215" alt="Affiliations — AiGeovis"/></a> | <a href="docs/assets/map-affiliations-wos.png"><img src="docs/assets/map-affiliations-wos.png" width="420" height="215" alt="Affiliations — WoS"/></a> |
 
 ---
 
