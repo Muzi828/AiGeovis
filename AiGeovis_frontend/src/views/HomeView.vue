@@ -1017,7 +1017,8 @@ const props = defineProps({
 })
 const emit = defineEmits(['session-created'])
 
-const ALIYUN_API_KEY = 'sk-94610a95ddb74c1f9736dd5652dad0cc'
+// 勿在仓库中写入真实 Key；由用户在「模型配置」中填写，或通过本地未入库环境配置注入
+const ALIYUN_API_KEY = ''
 const HOME_LANG_KEY = 'home_lang_switch'
 const HOME_THEME_KEY = 'home_theme_switch'
 const HOME_MODEL_CFG_KEY = 'home_model_cfg'
