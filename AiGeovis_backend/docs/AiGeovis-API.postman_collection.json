@@ -1,0 +1,490 @@
+{
+  "info": {
+    "name": "AiGeovis API",
+    "description": "地理编码与数据解析 API，基于 FastAPI 构建。\n支持两种数据格式：\n- **WoS/BP 格式**：多行文献记录，含 C1/C3 地址字段\n- **Affiliation 格式**：TSV 文件，含机构/国家名称 + 数量",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "健康检查",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health",
+        "description": "检查服务是否正常运行"
+      }
+    },
+    {
+      "name": "1. 上传数据文件",
+      "item": [
+        {
+          "name": "上传 WoS/BP 文献数据",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/data/upload",
+            "description": "上传 WoS/BP 格式文献记录文件（支持单文件或多文件合并）",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "type": "file",
+                  "src": "record.txt",
+                  "description": "WoS/BP 文献记录文件，支持 .txt"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "上传 Affiliation 数据（名称+数量）",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/data/upload",
+            "description": "上传 Affiliation 格式文件（TSV，含机构名/国家名 + 数量）。\n自动识别 Countries.txt、Affiliations.txt、Affiliation with Department.txt 等格式。\n返回 file_type=affiliation，前端需据此隐藏 C1/C3 选择。",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "files",
+                  "type": "file",
+                  "src": "Affiliations.txt",
+                  "description": "TSV 格式文件：名称 | 数量 | 百分比"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. 获取 Session 信息",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/data/session-info?session_id={{session_id}}",
+          "query": [
+            {
+              "key": "session_id",
+              "value": "{{session_id}}",
+              "description": "上传接口返回的 session_id"
+            }
+          ]
+        },
+        "description": "获取当前 session 的状态，包括 file_type、record_count、解析进度等。"
+      }
+    },
+    {
+      "name": "3. 数据解析",
+      "item": [
+        {
+          "name": "3.1 解析 Affiliation 文件（新增）",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/geo/parse-affiliation",
+            "description": "Affiliation 类型专用解析接口。将机构/国家名称批量发送给 AI，解析出国家、城市、经纬度。\n仅限 file_type=affiliation 的 session 调用。",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "session_id": "{{session_id}}",
+                "ai_configs": [
+                  {
+                    "type": "official",
+                    "provider": "OpenAI",
+                    "api_key": "sk-xxxxx",
+                    "base_url": "https://api.openai.com/v1",
+                    "model": "gpt-4o-mini",
+                    "name": "GPT-4o-mini"
+                  }
+                ],
+                "batch_size": 20
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "3.2 解析 C1 地址（WoS）",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/geo/parse-c1",
+            "description": "解析 WoS/BP 数据中的 C1 地址字段。将地址批量发送给 AI，提取国家、城市、机构、经纬度。\n仅限 file_type=wos 的 session 调用。",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "session_id": "{{session_id}}",
+                "ai_configs": [
+                  {
+                    "type": "official",
+                    "provider": "OpenAI",
+                    "api_key": "sk-xxxxx",
+                    "base_url": "https://api.openai.com/v1",
+                    "model": "gpt-4o-mini",
+                    "name": "GPT-4o-mini"
+                  }
+                ],
+                "batch_size": 30,
+                "field": "C1"
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "3.3 批量分层解析（WoS）",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/geo/parse-batch-tiers",
+            "description": "WoS 批量分层解析：同时解析国家、城市、机构多个层级，并行执行。\ntiers 数组可选：country / city / org",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "session_id": "{{session_id}}",
+                "ai_configs": [
+                  {
+                    "type": "official",
+                    "provider": "OpenAI",
+                    "api_key": "sk-xxxxx",
+                    "base_url": "https://api.openai.com/v1",
+                    "model": "gpt-4o-mini",
+                    "name": "GPT-4o-mini"
+                  }
+                ],
+                "batch_size": 30,
+                "field": "C1",
+                "tiers": ["country", "city", "org"]
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "3.4 停止解析",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{baseUrl}}/api/geo/stop-parse?session_id={{session_id}}",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                }
+              ]
+            },
+            "description": "停止正在运行中的解析任务"
+          }
+        }
+      ]
+    },
+    {
+      "name": "4. 解析进度查询",
+      "item": [
+        {
+          "name": "查询 Affiliation 解析进度",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/geo/parse-progress?session_id={{session_id}}",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                }
+              ]
+            },
+            "description": "查询 affiliation 解析进度，返回 status（running/done/stopped/error）、progress（0-100）、logs（最新80条日志）"
+          }
+        }
+      ]
+    },
+    {
+      "name": "5. 可视化数据",
+      "item": [
+        {
+          "name": "获取可视化数据（统一入口）",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/geo/viz-data?session_id={{session_id}}&field=C1&top_n=30",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                },
+                {
+                  "key": "field",
+                  "value": "C1",
+                  "description": "WoS 类型使用 C1/C3；affiliation 类型忽略此参数，固定返回 field=affiliation"
+                },
+                {
+                  "key": "top_n",
+                  "value": "30",
+                  "description": "国家/城市/机构排名返回的最大数量"
+                }
+              ]
+            },
+            "description": "获取用于地图可视化和统计图表的数据。\n- file_type=wos：按 C1/C3 字段聚合\n- file_type=affiliation：直接返回 parsed_df_affiliation 的聚合结果"
+          }
+        },
+        {
+          "name": "获取分层统计（WoS）",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/geo/stats?session_id={{session_id}}&field=C1&tier=country&top_n=30",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                },
+                {
+                  "key": "field",
+                  "value": "C1"
+                },
+                {
+                  "key": "tier",
+                  "value": "country",
+                  "description": "country | city | org"
+                },
+                {
+                  "key": "top_n",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "分层统计接口，按国家/城市/机构独立聚合，各自带坐标和数量"
+          }
+        }
+      ]
+    },
+    {
+      "name": "6. 解析结果",
+      "item": [
+        {
+          "name": "获取解析结果列表（分页）",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/geo/results?session_id={{session_id}}&page=1&page_size=50&field=C1",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "50"
+                },
+                {
+                  "key": "field",
+                  "value": "C1",
+                  "description": "WoS 类型：C1 或 C3；affiliation 类型忽略此参数"
+                }
+              ]
+            },
+            "description": "分页获取解析结果列表，包含国家、城市、经纬度等字段。未完整解析的记录排在前面。"
+          }
+        }
+      ]
+    },
+    {
+      "name": "7. 地理编码",
+      "item": [
+        {
+          "name": "发起地理编码",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/geo/geocode",
+            "description": "将已解析的国家/城市/机构信息通过高德地图或 Nominatim 获取精确经纬度",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "session_id": "{{session_id}}",
+                "amap_key": "your-amap-key",
+                "use_nominatim": true,
+                "field": "C1"
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "8. 模型管理",
+      "item": [
+        {
+          "name": "列出可用模型",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/models/list",
+            "description": "查询指定 API 端点支持的模型列表。支持 OpenAI、Ollama（local）、Gemini",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "type": "official",
+                "provider": "OpenAI",
+                "api_key": "sk-xxxxx",
+                "base_url": "https://api.openai.com/v1"
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "模型基准测试",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/models/benchmark",
+            "description": "并发测试所有可用模型的真实解析速度，按响应时间排序",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": {
+                "type": "official",
+                "provider": "OpenAI",
+                "api_key": "sk-xxxxx",
+                "base_url": "https://api.openai.com/v1",
+                "timeout": 3.0,
+                "max_workers": 10
+              },
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "9. 数据操作",
+      "item": [
+        {
+          "name": "获取数据记录（分页）",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/data/records?session_id={{session_id}}&page=1&page_size=50",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "page_size",
+                  "value": "50"
+                }
+              ]
+            },
+            "description": "分页获取原始数据记录"
+          }
+        },
+        {
+          "name": "导出数据",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/data/export?session_id={{session_id}}",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                }
+              ]
+            },
+            "description": "导出已解析的数据为 Excel 文件"
+          }
+        },
+        {
+          "name": "删除 Session",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/api/data/session?session_id={{session_id}}",
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{session_id}}"
+                }
+              ]
+            },
+            "description": "清除指定 session 的内存数据"
+          }
+        }
+      ]
+    }
+  ]
+}

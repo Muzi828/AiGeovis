@@ -1,0 +1,34 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+.env
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Documentation (not needed in container)
+*.md
+!requirements.txt
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: aigeovis-backend:latest
+    container_name: aigeovis-backend
+    restart: unless-stopped
+    ports:
+      - "35696:35696"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./backend/affiliation_cache.db:/app/backend/affiliation_cache.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:35696/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    # If you have an NVIDIA GPU and want hardware acceleration:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]

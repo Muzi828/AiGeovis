@@ -1,0 +1,29 @@
+# Dependencies & build
+**/node_modules/
+**/dist/
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+**/.Python
+
+# Local env / secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Runtime caches (rebuild via build_reference_db.py)
+**/affiliation_cache.db
+**/affiliation_cache.db-*
+
+# IDE / OS
+**/.idea/
+**/.vscode/
+**/*.swp
+**/.DS_Store
+**/Thumbs.db
+
+# Logs / temp
+**/*.log
+**/tmp/
+**/temp/

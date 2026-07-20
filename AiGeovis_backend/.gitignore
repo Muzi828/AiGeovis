@@ -1,0 +1,5 @@
+# Affiliation cache (contains API-queried geolocation data)
+backend/affiliation_cache.db
+backend/affiliation_cache.db-journal
+backend/affiliation_cache.db-wal
+backend/affiliation_cache.db-shm
