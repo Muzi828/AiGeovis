@@ -132,15 +132,7 @@ http://127.0.0.1:8939/AiGeovis/
 
 局域网访问时，前端会按页面 hostname 自动拼接 `http://<host>:35696/api`（见 `src/api/index.js`）。请确保防火墙放行 **8939** 与 **35696**。
 
-### 3. Optional · 本地跳过登录
 
-在 `AiGeovis_frontend/.env.development.local`：
-
-```env
-VITE_DISABLE_AUTH=true
-```
-
----
 
 ## Project Layout
 
@@ -170,21 +162,6 @@ AiGeovis_code/
 
 ---
 
-## Demo Walkthrough
-
-1. 打开前端（或线上 Demo）→ **Open Demo**（WoS）或自定义地址案例
-2. 左侧选择 C1 / C3 与解析层级 → **Start Parse**（Demo 已预解析时可直接看图）
-3. 右侧切换 **Map / 3D Map / Density**，调节节点大小、连线粗细与颜色
-4. 使用 **Open Table / Export** 查看或下载结果
-
-| Demo 资源 | 路径 / API |
-|-----------|------------|
-| 案例 JSON / 矩阵 | `AiGeovis_backend/demoData/` |
-| 列表接口 | `GET /api/demo/files` |
-| 数据接口 | `GET /api/demo/data/{name}` |
-| GML 下载 | `GET /api/demo/gml/download?filename=...` |
-
----
 
 ## API
 
@@ -245,15 +222,6 @@ CSV 需包含：`coords_countries.csv`、`coords_affiliations.csv`、`coords_aff
 
 ---
 
-## Roadmap / Notes for Contributors
-
-- [ ] 补齐生产环境前端静态资源 Docker / Nginx 示例
-- [ ] 为公开仓库补充正式论文引用条目（DOI）
-- [ ] CI：后端 health + 前端 build 冒烟
-
-欢迎 Issue / PR。提交前请避免把 API Key、`.env*`、`affiliation_cache.db`、`node_modules` 推入远程。
-
----
 
 ## Citation
 
