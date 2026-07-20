@@ -12,21 +12,28 @@ function covertCountry(content) {
     // 打印出当前处理的对象
     // console.log(`处理第${index}个对象:`, JSON.stringify(obj));
 
-    // 检查obj.name和obj.cotentTitle是否存在
-    if ((!obj.name && !obj.cotentTitle) || obj.name.includes('taiwan')) {
-      // console.error(`错误：第${index}个对象没有name或cotentTitle属性:`, JSON.stringify(obj));
-      // 可以设置一个默认值继续执行，或者跳过这个对象
-      return; // 跳过这个对象
+    const rawName = (obj.name || obj.contentTitle || "").toString();
+    if (!rawName) {
+      return; // 跳过无效项
     }
-    let title = obj.name || obj.contentTitle;
+    // 国家层计数：中国台湾 / 香港 / 澳门不单独统计
+    const lowerName = rawName.toLowerCase();
+    if (
+      lowerName.includes("taiwan") ||
+      lowerName.includes("hong kong") ||
+      lowerName.includes("macau") ||
+      lowerName.includes("macao") ||
+      lowerName.includes("chinese taipei")
+    ) {
+      return;
+    }
+    let title = rawName;
     if (title && typeof title === 'string') {
       // 判断赋值
-      if (title.includes("taiwan, china")) title = "Taiwan China";
       if (title.includes("china, mainland")) title = "China";
       if (title.includes("peoples r china")) title = "China";
 
       if (title.includes("china")) title = "China";
-
       // if (title.includes("peoples r china")) title = "China";
       if (title.includes("syria")) title = "Syria";
       if (title.includes("japan")) title = "Japan";
@@ -276,7 +283,6 @@ function covertCountry(content) {
       if (title.includes("monaco")) title = "Monaco";
       if (title.includes("unknow")) title = "Unknow";
       if (title.includes("england")) title = "England";
-      if (title.includes("china taiwan")) title = "China Taiwan";
       if (title.includes("wales")) title = "Wales";
       if (title.includes("scotland")) title = "Scotland";
       if (title.includes("turkiye")) title = "Turkiye";

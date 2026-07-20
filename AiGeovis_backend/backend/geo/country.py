@@ -6,6 +6,7 @@ from typing import Dict, Optional, Tuple
 
 from core.paths import BACKEND_DIR
 
+
 # ── 国家/地区标准化映射 ──────────────────────────
 COUNTRY_NORMALIZE_MAP = {
     # 美国变体
@@ -27,13 +28,15 @@ COUNTRY_NORMALIZE_MAP = {
     "northern ireland": "United Kingdom",
     "great britain": "United Kingdom",
     "britain": "United Kingdom",
-    # 中国变体
+    # 中国变体（主权国家主体）
     "p.r. china": "China",
     "p.r.china": "China",
     "pr china": "China",
     "peoples r china": "China",
     "people's republic of china": "China",
     "prc": "China",
+    "china, mainland": "China",
+    "mainland china": "China",
     # 德国变体
     "germany": "Germany",
     "deutschland": "Germany",
@@ -47,11 +50,96 @@ COUNTRY_NORMALIZE_MAP = {
     "russian federation": "Russia",
     # 其他常见变体
     "uae": "United Arab Emirates",
-    "roc": "Taiwan (China)",
 }
 
-# 需要添加 (China) 后缀的地区
+# 中国台湾 / 香港 / 澳门：表述用国际通行附注形式；国家层计数不单独统计。
+# 英文官方拼写优先 Macao（联合国用语），兼容 Macau。
+_CHINA_REGION_CANONICAL = {
+    "taiwan": "Taiwan (China)",
+    "hong kong": "Hong Kong (China)",
+    "macao": "Macao (China)",
+    "macau": "Macao (China)",
+}
+
+# 别名 → 规范基名（taiwan / hong kong / macao）
+_CHINA_REGION_ALIASES = {
+    "taiwan": "taiwan",
+    "taiwan, china": "taiwan",
+    "taiwan china": "taiwan",
+    "taiwan(china)": "taiwan",
+    "taiwan (china)": "taiwan",
+    "chinese taipei": "taiwan",
+    "taiwan province of china": "taiwan",
+    "taiwan, province of china": "taiwan",
+    "roc": "taiwan",
+    "republic of china": "taiwan",
+    "hong kong": "hong kong",
+    "hong kong, china": "hong kong",
+    "hong kong china": "hong kong",
+    "hong kong(china)": "hong kong",
+    "hong kong (china)": "hong kong",
+    "hong kong sar": "hong kong",
+    "hong kong special administrative region": "hong kong",
+    "hong kong special administrative region of china": "hong kong",
+    "hk": "hong kong",
+    "hksar": "hong kong",
+    "macao": "macao",
+    "macau": "macao",
+    "macao, china": "macao",
+    "macau, china": "macao",
+    "macao china": "macao",
+    "macau china": "macao",
+    "macao(china)": "macao",
+    "macau(china)": "macao",
+    "macao (china)": "macao",
+    "macau (china)": "macao",
+    "macao sar": "macao",
+    "macau sar": "macao",
+    "macao special administrative region": "macao",
+    "macau special administrative region": "macao",
+    "macao special administrative region of china": "macao",
+    "macau special administrative region of china": "macao",
+}
+
+# 兼容旧代码引用
 CHINA_REGIONS = {"taiwan", "hong kong", "macau", "macao"}
+
+_CHINA_SUFFIX_RE = re.compile(r"\s*\(\s*china\s*\)\s*$", re.IGNORECASE)
+_CHINA_COMMA_RE = re.compile(r"\s*,\s*china\s*$", re.IGNORECASE)
+
+
+def _china_region_key(name: str) -> Optional[str]:
+    """若属于中国台湾/香港/澳门，返回基名 taiwan|hong kong|macao；否则 None。"""
+    if not name:
+        return None
+    key = re.sub(r"\s+", " ", str(name).strip().lower().rstrip("."))
+    key = key.replace("（", "(").replace("）", ")")
+    if key in _CHINA_REGION_ALIASES:
+        return _CHINA_REGION_ALIASES[key]
+
+    # Taiwan(China) / Taiwan , China 等松散写法
+    bare = _CHINA_SUFFIX_RE.sub("", key).strip()
+    bare = _CHINA_COMMA_RE.sub("", bare).strip()
+    bare = re.sub(r"\s+", " ", bare)
+    if bare in _CHINA_REGION_ALIASES:
+        return _CHINA_REGION_ALIASES[bare]
+    if bare in ("taiwan", "hong kong", "macao", "macau"):
+        return "macao" if bare == "macau" else bare
+    return None
+
+
+def is_china_region_entity(name: str) -> bool:
+    """是否为中国台湾/香港/澳门（国家层计数与国家共现中不单独统计）。"""
+    return _china_region_key(name) is not None
+
+
+def canonical_china_region_name(name: str) -> Optional[str]:
+    """返回规范国际表述，如 Taiwan (China)；非此类地区返回 None。"""
+    base = _china_region_key(name)
+    if not base:
+        return None
+    return _CHINA_REGION_CANONICAL[base]
+
 
 # ── 内置国家坐标表（离线，规则通道用；与前端 country.json 同源，格式 [lng, lat]）──
 _COUNTRY_COORDS_PATH = BACKEND_DIR / "country_coords.json"
@@ -67,6 +155,10 @@ COUNTRY_COORDS.setdefault("taiwan", (25.03, 121.57))
 COUNTRY_COORDS.setdefault("hong kong", (22.32, 114.17))
 COUNTRY_COORDS.setdefault("macau", (22.20, 113.55))
 COUNTRY_COORDS.setdefault("macao", (22.20, 113.55))
+COUNTRY_COORDS.setdefault("taiwan (china)", (25.03, 121.57))
+COUNTRY_COORDS.setdefault("hong kong (china)", (22.32, 114.17))
+COUNTRY_COORDS.setdefault("macao (china)", (22.20, 113.55))
+COUNTRY_COORDS.setdefault("macau (china)", (22.20, 113.55))
 
 
 def _lookup_country_coords(name: str) -> Optional[Tuple[float, float]]:
@@ -76,29 +168,34 @@ def _lookup_country_coords(name: str) -> Optional[Tuple[float, float]]:
     key = name.strip().lower()
     if key in COUNTRY_COORDS:
         return COUNTRY_COORDS[key]
-    key2 = re.sub(r"\s*\(china\)$", "", key).strip()
+    key2 = _CHINA_SUFFIX_RE.sub("", key).strip()
     if key2 and key2 in COUNTRY_COORDS:
         return COUNTRY_COORDS[key2]
+    base = _china_region_key(name)
+    if base and base in COUNTRY_COORDS:
+        return COUNTRY_COORDS[base]
     return None
 
 
 def _normalize_country(country: str) -> str:
-    """标准化国家/地区名称。"""
+    """
+    标准化国家/地区名称。
+
+    对中国台湾、香港、澳门使用国际通行表述（Taiwan/Hong Kong/Macao (China)）；
+    国家层频次与共现统计另行排除这些实体，见 is_china_region_entity。
+    """
     if not country:
         return country
-    raw = country.strip()
-    key = raw.lower()
+    raw = country.strip().rstrip(".")
+    if not raw:
+        return country
 
-    # 先检查映射表
+    canon = canonical_china_region_name(raw)
+    if canon:
+        return canon
+
+    key = re.sub(r"\s+", " ", raw.lower())
     if key in COUNTRY_NORMALIZE_MAP:
         return COUNTRY_NORMALIZE_MAP[key]
 
-    # 检查是否需要添加 (China) 后缀
-    for region in CHINA_REGIONS:
-        if key == region or key.startswith(region + " ") or key.startswith(region + ","):
-            if "(china)" not in key:
-                return f"{raw} (China)"
-            return raw
-
     return raw
-

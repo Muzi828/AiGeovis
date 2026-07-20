@@ -150,6 +150,62 @@ def list_demo_gml_files():
 
 DEMO_DATA_DIR = PROJECT_ROOT / "demoData"
 
+def _filter_china_regions_from_demo_payload(data: Any, filename: str) -> Any:
+    """仅国家层 Demo 结果去掉台/港/澳；城市 / 机构层（如 Hong Kong 城市）保留。"""
+    if not isinstance(data, dict):
+        return data
+
+    def _keep(item: Any) -> bool:
+        if not isinstance(item, dict):
+            return True
+        name = item.get("name") or item.get("country") or ""
+        return not is_china_region_entity(str(name))
+
+    if isinstance(data.get("country_counts"), list):
+        data["country_counts"] = [x for x in data["country_counts"] if _keep(x)]
+
+    lower = filename.lower()
+    tier = str(data.get("tier") or "").lower()
+    is_country_view = (
+        tier == "country"
+        or "countrycount" in lower.replace("_", "").replace("-", "")
+        or ("country" in lower and "city" not in lower and "org" not in lower)
+    )
+    if is_country_view:
+        for key in ("items", "geocode_items", "records", "data"):
+            val = data.get(key)
+            if isinstance(val, list):
+                data[key] = [x for x in val if _keep(x)]
+
+        # 国家共现矩阵：去掉台/港/澳节点并重建子矩阵
+        entities = data.get("entities")
+        matrix = data.get("matrix")
+        if isinstance(entities, list) and isinstance(matrix, list) and entities:
+            keep_idx = [i for i, e in enumerate(entities) if not is_china_region_entity(str(e))]
+            if len(keep_idx) != len(entities):
+                data["entities"] = [entities[i] for i in keep_idx]
+                data["matrix"] = [
+                    [matrix[i][j] for j in keep_idx]
+                    for i in keep_idx
+                    if i < len(matrix) and isinstance(matrix[i], list)
+                ]
+                old_names = {entities[i] for i in keep_idx}
+                if isinstance(data.get("nodes"), list):
+                    data["nodes"] = [
+                        n for n in data["nodes"]
+                        if isinstance(n, dict)
+                        and not is_china_region_entity(str(n.get("name") or n.get("id") or ""))
+                    ]
+                if isinstance(data.get("edges"), list):
+                    data["edges"] = [
+                        e for e in data["edges"]
+                        if isinstance(e, dict)
+                        and str(e.get("source", "")) in old_names
+                        and str(e.get("target", "")) in old_names
+                    ]
+    return data
+
+
 @router.get("/api/demo/data/{filename}")
 def get_demo_data(filename: str):
     """
@@ -163,8 +219,8 @@ def get_demo_data(filename: str):
     if not file_path.exists():
         raise HTTPException(status_code=404, detail=f"{ZH.S_3e70c2d15e}{filename}{ZH.S_5095e98c51}")
     with open(file_path, "r", encoding="utf-8-sig") as f:
-        return json.load(f)
-
+        data = json.load(f)
+    return _filter_china_regions_from_demo_payload(data, filename)
 @router.get("/api/demo/files")
 def list_demo_files():
     """List all available data files in the demoData directory."""

@@ -40,7 +40,7 @@ pull(_geo_reference_cache, globals())
 
 from core.sessions import sessions
 from geo.address import _field_cols, _field_parsed_df_key, _split_address_cell, _split_c3_field, _tier_cols, _tier_parsed_df_key
-from geo.country import _normalize_country
+from geo.country import _normalize_country, is_china_region_entity
 from geo.reference_cache import _tier_rule_parse
 
 def _make_entity_id(
@@ -50,12 +50,15 @@ def _make_entity_id(
 ) -> str:
     """
     生成实体的唯一标识。
-    - tier=country : 只需 entity_name，直接返回标准化后的国家名
+    - tier=country : 标准化国家名；中国台湾/香港/澳门不进入国家层统计（返回空）
     - tier=city   : 直接返回城市名
     - tier=org    : 直接返回机构名
     """
     if tier == "country":
-        return _normalize_country(entity_name)
+        name = _normalize_country(entity_name)
+        if not name or is_china_region_entity(name):
+            return ""
+        return name
     return entity_name.strip()
 
 def _tier_address_entities_by_paper(

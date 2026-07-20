@@ -203,15 +203,20 @@ def get_viz_data(session_id: str, field: str = "C1", top_n: int = 30):
     w["_lat"] = pd.to_numeric(w["_lat"], errors="coerce")
     w["_lng"] = pd.to_numeric(w["_lng"], errors="coerce")
 
-    def _tier_whole_counts(key: str):
+    def _tier_whole_counts(key: str, *, exclude_china_regions: bool = False):
         sub = w[w[key].astype(str).str.strip().ne("")]
         if sub.empty:
             return []
+        if exclude_china_regions:
+            sub = sub[~sub[key].map(is_china_region_entity)]
+            if sub.empty:
+                return []
         ded = sub.drop_duplicates(subset=["paper_idx", key])
         cnt = ded.groupby(key).size().sort_values(ascending=False).head(top_n)
         return [{"name": str(k), "value": int(v)} for k, v in cnt.items()]
 
-    country_counts = _tier_whole_counts("_country")
+    # 国家层：台/港/澳不单独计入；机构/城市层仍保留其规范标注
+    country_counts = _tier_whole_counts("_country", exclude_china_regions=True)
     org_counts     = _tier_whole_counts("_org")
     city_counts    = _tier_whole_counts("_city")
 
@@ -219,6 +224,8 @@ def get_viz_data(session_id: str, field: str = "C1", top_n: int = 30):
     point_key = "_org" if field == "C3" else "_country"
     geocode_items = []
     sub = w[w[point_key].astype(str).str.strip().ne("")]
+    if field != "C3" and not sub.empty:
+        sub = sub[~sub[point_key].map(is_china_region_entity)]
     if not sub.empty:
         ded = sub.drop_duplicates(subset=["paper_idx", point_key])
         counts = ded.groupby(point_key).size().sort_values(ascending=False).head(top_n)
@@ -241,7 +248,6 @@ def get_viz_data(session_id: str, field: str = "C1", top_n: int = 30):
                 "lng":  round(lng_v, 5),
                 "count": int(cnt),
             })
-
     return {
         "field":          field,
         "parsed":         True,
@@ -295,6 +301,12 @@ def get_tier_stats(session_id: str, field: str = "C1", tier: str = "country", to
     w = w[~w["_name"].str.lower().isin(_blank)].copy()
     if w.empty:
         return {"tier": tier, "field": field, "parsed": True, "total": 0, "items": []}
+
+    # 国家层：中国台湾 / 香港 / 澳门不单独计入频次与地图
+    if tier == "country":
+        w = w[~w["_name"].map(is_china_region_entity)].copy()
+        if w.empty:
+            return {"tier": tier, "field": field, "parsed": True, "total": 0, "items": []}
 
     if country_col in w.columns:
         w["_country"] = w[country_col].astype(str).str.strip()

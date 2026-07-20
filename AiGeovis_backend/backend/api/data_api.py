@@ -427,7 +427,10 @@ def data_quality(session_id: str):
                 parts = [p.strip() for p in addr.split(",") if p.strip()]
                 if parts:
                     orgs.add(parts[0])
-                    doc_countries.add(_normalize_country(parts[-1]))
+                    ctry = _normalize_country(parts[-1])
+                    # 国家概览计数：台/港/澳不作为独立国家计入
+                    if ctry and not is_china_region_entity(ctry):
+                        doc_countries.add(ctry)
             countries.update(doc_countries)
             if len(doc_countries) > 1:
                 intl_docs += 1

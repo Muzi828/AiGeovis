@@ -185,6 +185,9 @@ def _viz_data_affiliation(sess: Dict, top_n: int = 30, field: str = "affiliation
     work = df[[name_col]].copy()
     work["_name"] = work[name_col].astype(str).str.strip()
     work = work[work["_name"].ne("") & ~work["_name"].str.lower().isin(("nan", "none"))]
+    if subtype == "affiliation_country":
+        from geo.country import is_china_region_entity
+        work = work[~work["_name"].map(is_china_region_entity)]
     if "count" in df.columns:
         work["_count"] = pd.to_numeric(df.loc[work.index, "count"], errors="coerce").fillna(1).astype(int)
     else:

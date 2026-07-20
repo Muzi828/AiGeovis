@@ -3,6 +3,7 @@
 """
 
 from core.i18n import ZH
+from geo.country import is_china_region_entity
 
 import os
 import sys
@@ -552,7 +553,8 @@ class DataService:
                 'france': 'France', 'japan': 'Japan', 'canada': 'Canada', 'australia': 'Australia',
                 'india': 'India', 'italy': 'Italy', 'spain': 'Spain', 'netherlands': 'Netherlands',
                 'the netherlands': 'Netherlands', 'holland': 'Netherlands', 'brazil': 'Brazil',
-                'russia': 'Russia', 'russian federation': 'Russia', 'taiwan': 'Taiwan(China)',
+                'russia': 'Russia', 'russian federation': 'Russia',
+                'taiwan': 'Taiwan (China)', 'chinese taipei': 'Taiwan (China)',
                 'switzerland': 'Switzerland', 'sweden': 'Sweden', 'poland': 'Poland',
                 'belgium': 'Belgium', 'austria': 'Austria', 'norway': 'Norway', 'denmark': 'Denmark',
                 'finland': 'Finland', 'portugal': 'Portugal', 'greece': 'Greece', 'ireland': 'Ireland',
@@ -563,8 +565,9 @@ class DataService:
                 'pakistan': 'Pakistan', 'egypt': 'Egypt', 'south africa': 'South Africa',
                 'nigeria': 'Nigeria', 'argentina': 'Argentina', 'chile': 'Chile', 'colombia': 'Colombia',
                 'new zealand': 'New Zealand', 'czech republic': 'Czech Republic', 'czechia': 'Czech Republic',
-                'hungary': 'Hungary', 'romania': 'Romania', 'ukraine': 'Ukraine', 'hong kong': 'Hong Kong(China)',
-                'macau': 'Macau(China)',
+                'hungary': 'Hungary', 'romania': 'Romania', 'ukraine': 'Ukraine',
+                'hong kong': 'Hong Kong (China)', 'hksar': 'Hong Kong (China)',
+                'macau': 'Macao (China)', 'macao': 'Macao (China)',
                 'philippines': 'Philippines', 'bangladesh': 'Bangladesh', 'sri lanka': 'Sri Lanka',
                 'nepal': 'Nepal', 'peru': 'Peru', 'venezuela': 'Venezuela', 'cuba': 'Cuba',
                 'north korea': 'North Korea', 'dprk': 'North Korea', 'syria': 'Syria',
@@ -816,7 +819,8 @@ class DataService:
                         country = parts[-1].strip().lower()
                         # 标准化国家名
                         country = self._normalize_country(country)
-                        if country:
+                        # 国家层计数：台/港/澳不单独统计
+                        if country and not is_china_region_entity(country):
                             record_countries.add(country)
                 # 将该记录的唯一国家添加到总列表
                 countries.extend(record_countries)
