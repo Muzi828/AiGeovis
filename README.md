@@ -44,21 +44,21 @@
 <p align="center"><b>Main workspace · 2D collaboration map</b></p>
 <p align="center">
   <a href="docs/assets/ui-2d-map.png">
-    <img src="docs/assets/ui-2d-map.png" width="640" alt="AiGeovis 2D map workspace"/>
+    <img src="docs/assets/ui-2d-map.png" width="900" alt="AiGeovis 2D map workspace"/>
   </a>
 </p>
 
 <p align="center"><b>3D globe · country / region network</b></p>
 <p align="center">
   <a href="docs/assets/ui-3d-globe.png">
-    <img src="docs/assets/ui-3d-globe.png" width="640" alt="AiGeovis 3D globe"/>
+    <img src="docs/assets/ui-3d-globe.png" width="780" alt="AiGeovis 3D globe"/>
   </a>
 </p>
 
 <p align="center"><b>Raw data table · imported WoS records</b></p>
 <p align="center">
   <a href="docs/assets/ui-raw-table.png">
-    <img src="docs/assets/ui-raw-table.png" width="640" alt="AiGeovis raw data table"/>
+    <img src="docs/assets/ui-raw-table.png" width="900" alt="AiGeovis raw data table"/>
   </a>
 </p>
 
