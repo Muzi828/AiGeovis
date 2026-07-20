@@ -588,7 +588,7 @@
             "model": "Aliyun:qwen3-coder-plus-2025-07-22"
         },
         {
-            "address": "Natl Cent Univ, Dept Informat Management, Jhongli 32001, Taoyuan, Taiwan(China)",
+            "address": "Natl Cent Univ, Dept Informat Management, Jhongli 32001, Taoyuan, Taiwan, Province of China",
             "name": "Taoyuan",
             "lat": 24.9861,
             "lng": 121.0302,
@@ -596,7 +596,7 @@
             "model": "Aliyun:qwen-turbo"
         },
         {
-            "address": "Natl Tsing Hua Univ, Inst Serv Sci, Hsinchu 30013, Taiwan(China)",
+            "address": "Natl Tsing Hua Univ, Inst Serv Sci, Hsinchu 30013, Taiwan, Province of China",
             "name": "Hsinchu",
             "lat": 24.8036,
             "lng": 120.9686,
@@ -1348,7 +1348,7 @@
             "model": "Aliyun:qwen2.5-7b-instruct-1m"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, 43,Sec 4,Keelung Rd, Taipei 10607, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, 43,Sec 4,Keelung Rd, Taipei 10607, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56541,
@@ -1356,7 +1356,7 @@
             "model": "Aliyun:qwen3-next-80b-a3b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.565,
@@ -1364,7 +1364,7 @@
             "model": "Aliyun:qwen-coder-turbo-0919"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5667,
@@ -1372,7 +1372,7 @@
             "model": "Aliyun:qwen2.5-7b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ, Inst Ind Engn, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Inst Ind Engn, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56544,
@@ -3900,7 +3900,7 @@
             "model": "Aliyun:qwen3-30b-a3b-instruct-2507"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, 43 Sec 4 Keelung Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, 43 Sec 4 Keelung Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0698,
             "lng": 121.5192,
@@ -3908,7 +3908,7 @@
             "model": "Aliyun:qwen-turbo-latest"
         },
         {
-            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -4092,7 +4092,7 @@
             "model": "Aliyun:qwen-turbo-2025-07-15"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0376,
             "lng": 121.5678,
@@ -4100,7 +4100,7 @@
             "model": "Aliyun:tongyi-xiaomi-analysis-flash"
         },
         {
-            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -4516,7 +4516,7 @@
             "model": "Aliyun:qwen-coder-turbo-latest"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, Roosevelt Rd 1,Sec 4, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, Roosevelt Rd 1,Sec 4, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -5132,7 +5132,7 @@
             "model": "Aliyun:qwen2.5-14b-instruct"
         },
         {
-            "address": "Chung Yuan Christian Univ, Dept Phys, Chungli, Taiwan(China)",
+            "address": "Chung Yuan Christian Univ, Dept Phys, Chungli, Taiwan, Province of China",
             "name": "Chungli",
             "lat": 25.1359,
             "lng": 121.2935,
@@ -5516,7 +5516,7 @@
             "model": "Aliyun:qwen2.5-coder-32b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0478,
             "lng": 121.5319,
@@ -5524,7 +5524,7 @@
             "model": "Aliyun:qwen3-coder-flash"
         },
         {
-            "address": "Natl Taiwan Univ, Inst Ind Engn, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Inst Ind Engn, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5667,
@@ -5532,7 +5532,7 @@
             "model": "Aliyun:qwen-turbo-2025-07-15"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0328,
             "lng": 121.5654,
@@ -5548,7 +5548,7 @@
             "model": "Aliyun:qwen3-coder-next"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0336,
             "lng": 121.5636,
@@ -5556,7 +5556,7 @@
             "model": "Aliyun:qwen-turbo-2025-04-28"
         },
         {
-            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, 1,Sec 4,Roosevelt Rd, Taipei 10617, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -5700,7 +5700,7 @@
             "model": "Aliyun:qwen-plus-2025-04-28"
         },
         {
-            "address": "Yuan Ze Univ, Coll Management, Taoyuan 32003, Taiwan(China)",
+            "address": "Yuan Ze Univ, Coll Management, Taoyuan 32003, Taiwan, Province of China",
             "name": "Taoyuan",
             "lat": 24.9821,
             "lng": 121.3045,
@@ -5708,7 +5708,7 @@
             "model": "Aliyun:qwen-coder-plus-1106"
         },
         {
-            "address": "Yuan Ze Univ, Innovat Ctr Big Data & Digital Convergence, Taoyuan 32003, Taiwan(China)",
+            "address": "Yuan Ze Univ, Innovat Ctr Big Data & Digital Convergence, Taoyuan 32003, Taiwan, Province of China",
             "name": "Taoyuan",
             "lat": 24.855,
             "lng": 120.972,
@@ -5716,7 +5716,7 @@
             "model": "Aliyun:qwen-coder-turbo-latest"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Technol Management, Taipei 10607, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Technol Management, Taipei 10607, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -6212,7 +6212,7 @@
             "model": "Aliyun:qwen-plus-2025-12-01"
         },
         {
-            "address": "Natl Cent Univ, Dept Informat Management, Taipei, Taiwan(China)",
+            "address": "Natl Cent Univ, Dept Informat Management, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.565,
@@ -7196,7 +7196,7 @@
             "model": "Aliyun:qwen2.5-coder-32b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, 43,Sec 4,Keelung Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, 43,Sec 4,Keelung Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0999,
             "lng": 121.5499,
@@ -7204,7 +7204,7 @@
             "model": "Aliyun:qwen3-coder-flash"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5667,
@@ -7212,7 +7212,7 @@
             "model": "Aliyun:qwen-turbo-2025-07-15"
         },
         {
-            "address": "Natl Taiwan Univ, CRETA, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, CRETA, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0342,
             "lng": 121.5442,
@@ -7356,7 +7356,7 @@
             "model": "Aliyun:qwen3-next-80b-a3b-instruct"
         },
         {
-            "address": "Natl Yunlin Univ Sci & Technol, Dept Business Adm, Yunlin, Taiwan(China)",
+            "address": "Natl Yunlin Univ Sci & Technol, Dept Business Adm, Yunlin, Taiwan, Province of China",
             "name": "Yunlin",
             "lat": 23.8512,
             "lng": 120.4268,
@@ -8636,7 +8636,7 @@
             "model": "Aliyun:qwen2.5-coder-32b-instruct"
         },
         {
-            "address": "Chaoyang Univ Technol, Dept Business Adm, Taichung 41349, Taiwan(China)",
+            "address": "Chaoyang Univ Technol, Dept Business Adm, Taichung 41349, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.1475,
             "lng": 120.67,
@@ -8644,7 +8644,7 @@
             "model": "Aliyun:qwen3-coder-flash"
         },
         {
-            "address": "Chaoyang Univ Technol, Dept Informat Management, Taichung 41349, Taiwan(China)",
+            "address": "Chaoyang Univ Technol, Dept Informat Management, Taichung 41349, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.1333,
             "lng": 120.6767,
@@ -8652,7 +8652,7 @@
             "model": "Aliyun:qwen-turbo-2025-07-15"
         },
         {
-            "address": "Tamkang Univ, Dept Management Sci, New Taipei 251301, Taiwan(China)",
+            "address": "Tamkang Univ, Dept Management Sci, New Taipei 251301, Taiwan, Province of China",
             "name": "New Taipei City",
             "lat": 25.0363,
             "lng": 126.9723,
@@ -8660,7 +8660,7 @@
             "model": "Aliyun:tongyi-xiaomi-analysis-flash"
         },
         {
-            "address": "Chaoyang Univ Technol, Dept Mkt & Logist Management, Taichung 41349, Taiwan(China)",
+            "address": "Chaoyang Univ Technol, Dept Mkt & Logist Management, Taichung 41349, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.1477,
             "lng": 120.6736,
@@ -8724,7 +8724,7 @@
             "model": "Aliyun:tongyi-xiaomi-analysis-pro"
         },
         {
-            "address": "Natl Appl Res Labs, Sci & Technol Policy Res & Informat Ctr, Taipei 106, Taiwan(China)",
+            "address": "Natl Appl Res Labs, Sci & Technol Policy Res & Informat Ctr, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0329,
             "lng": 121.5656,
@@ -8732,7 +8732,7 @@
             "model": "Aliyun:qwen2.5-14b-instruct"
         },
         {
-            "address": "Natl Chung Hsing Univ, Inst Technol Management, Taichung 402, Taiwan(China)",
+            "address": "Natl Chung Hsing Univ, Inst Technol Management, Taichung 402, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.1632,
             "lng": 120.9616,
@@ -8740,7 +8740,7 @@
             "model": "Aliyun:codeqwen1.5-7b-chat"
         },
         {
-            "address": "Natl Chengchi Univ, Grad Inst Technol & Innovat Management, Taipei 116, Taiwan(China)",
+            "address": "Natl Chengchi Univ, Grad Inst Technol & Innovat Management, Taipei 116, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -8876,7 +8876,7 @@
             "model": "Aliyun:qwen2.5-coder-32b-instruct"
         },
         {
-            "address": "Asia Univ, Trend Res Ctr, Wufeng 41354, Taichung County, Taiwan(China)",
+            "address": "Asia Univ, Trend Res Ctr, Wufeng 41354, Taichung County, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.1477,
             "lng": 120.6736,
@@ -8988,7 +8988,7 @@
             "model": "Aliyun:qwen3-coder-plus-2025-07-22"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei 10764, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei 10764, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5655,
@@ -8996,7 +8996,7 @@
             "model": "Aliyun:qwen-turbo"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei 10764, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei 10764, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0375,
             "lng": 121.5637,
@@ -9876,7 +9876,7 @@
             "model": "Aliyun:qwen-turbo-2025-04-28"
         },
         {
-            "address": "Fu Jen Catholic Univ, Dept Informat Management, 510 Zhongzheng Rd, New Taipei 24205, Taiwan(China)",
+            "address": "Fu Jen Catholic Univ, Dept Informat Management, 510 Zhongzheng Rd, New Taipei 24205, Taiwan, Province of China",
             "name": "New Taipei",
             "lat": 25.1173,
             "lng": 121.4086,
@@ -10596,7 +10596,7 @@
             "model": "Aliyun:qwen-turbo-2025-04-28"
         },
         {
-            "address": "Acad Sinica, Inst Stat Sci, 128 Acad Rd,Sect 2, Taipei 11529, Taiwan(China)",
+            "address": "Acad Sinica, Inst Stat Sci, 128 Acad Rd,Sect 2, Taipei 11529, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5333,
@@ -10860,7 +10860,7 @@
             "model": "Aliyun:qwen3-30b-a3b-instruct-2507"
         },
         {
-            "address": "Natl Taiwan Univ, Inst Ind Engn, Taipei 10764, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Inst Ind Engn, Taipei 10764, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -12044,7 +12044,7 @@
             "model": "Aliyun:qwen-flash"
         },
         {
-            "address": "Natl Chiao Tung Univ, Inst Business & Management, 118 Chung Hsiao West Rd,Sect 1, Taipei, Taiwan(China)",
+            "address": "Natl Chiao Tung Univ, Inst Business & Management, 118 Chung Hsiao West Rd,Sect 1, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0336,
             "lng": 121.5644,
@@ -12052,7 +12052,7 @@
             "model": "Aliyun:qwen-turbo-2024-11-01"
         },
         {
-            "address": "Sci & Technol Policy Res & Informat Ctr, Natl Appl Res Labs, 106 Heping East Rd, Taipei, Taiwan(China)",
+            "address": "Sci & Technol Policy Res & Informat Ctr, Natl Appl Res Labs, 106 Heping East Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -12060,7 +12060,7 @@
             "model": "Aliyun:qwen3-30b-a3b-instruct-2507"
         },
         {
-            "address": "Chih Lee Univ Technol, Dept Finance & Banking, 313 Wunhua Rd,Sect 1, New Taipei, Taiwan(China)",
+            "address": "Chih Lee Univ Technol, Dept Finance & Banking, 313 Wunhua Rd,Sect 1, New Taipei, Taiwan, Province of China",
             "name": "New Taipei",
             "lat": 25.0476,
             "lng": 121.5398,
@@ -12348,7 +12348,7 @@
             "model": "Aliyun:qwen3-coder-plus-2025-07-22"
         },
         {
-            "address": "Yuan Ze Univ, Coll Management, Chungli 32003, Taiwan(China)",
+            "address": "Yuan Ze Univ, Coll Management, Chungli 32003, Taiwan, Province of China",
             "name": "Chungli",
             "lat": 24.9866,
             "lng": 120.9735,
@@ -13124,7 +13124,7 @@
             "model": "Aliyun:tongyi-xiaomi-analysis-pro"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03333,
             "lng": 121.56667,
@@ -13668,7 +13668,7 @@
             "model": "Aliyun:qwen2.5-coder-14b-instruct"
         },
         {
-            "address": "Taipei Med Univ, Sch Publ Hlth, Taipei 11014, Taiwan(China)",
+            "address": "Taipei Med Univ, Sch Publ Hlth, Taipei 11014, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -14052,7 +14052,7 @@
             "model": "Aliyun:qwen2.5-32b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Technol Management, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Technol Management, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -14060,7 +14060,7 @@
             "model": "Aliyun:qwen-plus-2025-07-14"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Dept Informat Management, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Dept Informat Management, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03389,
             "lng": 121.56658,
@@ -14524,7 +14524,7 @@
             "model": "Aliyun:deepseek-v3.1"
         },
         {
-            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, Taipei 106, Taiwan(China)",
+            "address": "Natl Taiwan Univ Sci & Technol, Grad Inst Patent, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0374,
             "lng": 121.5648,
@@ -14532,7 +14532,7 @@
             "model": "Aliyun:qwen2.5-32b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei 106, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -14540,7 +14540,7 @@
             "model": "Aliyun:qwen-plus-2025-07-14"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei 106, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0339,
             "lng": 121.5644,
@@ -14548,7 +14548,7 @@
             "model": "Aliyun:qwen2.5-7b-instruct-1m"
         },
         {
-            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, Taipei 106, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56541,
@@ -14780,7 +14780,7 @@
             "model": "Aliyun:qwen-plus-2025-07-14"
         },
         {
-            "address": "Natl Chung Hsing Univ, Grad Inst Lib & Informat Sci, Taichung 40227, Taiwan(China)",
+            "address": "Natl Chung Hsing Univ, Grad Inst Lib & Informat Sci, Taichung 40227, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.1588,
             "lng": 120.62783,
@@ -15020,7 +15020,7 @@
             "model": "Aliyun:qwen-plus-2025-07-14"
         },
         {
-            "address": "Chaoyang Univ Technol, Dept Informat Management, Wufong Township 41349, Taichung County, Taiwan(China)",
+            "address": "Chaoyang Univ Technol, Dept Informat Management, Wufong Township 41349, Taichung County, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.15893,
             "lng": 120.62695,
@@ -15028,7 +15028,7 @@
             "model": "Aliyun:qwen2.5-7b-instruct-1m"
         },
         {
-            "address": "Natl Pingtung Univ Sci & Technol, Dept Ind Management, Neipu, Pingtung, Taiwan(China)",
+            "address": "Natl Pingtung Univ Sci & Technol, Dept Ind Management, Neipu, Pingtung, Taiwan, Province of China",
             "name": "Pingtung",
             "lat": 22.7196,
             "lng": 120.4614,
@@ -15508,7 +15508,7 @@
             "model": "Aliyun:qwen2.5-7b-instruct-1m"
         },
         {
-            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat CRETA, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Ctr Res Econometr Theory & Applicat CRETA, 1,Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56541,
@@ -15860,7 +15860,7 @@
             "model": "Aliyun:tongyi-xiaomi-analysis-flash"
         },
         {
-            "address": "Natl Taiwan Normal Univ, Sci Educ Ctr, Taipei 11677, Taiwan(China)",
+            "address": "Natl Taiwan Normal Univ, Sci Educ Ctr, Taipei 11677, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5667,
@@ -15988,7 +15988,7 @@
             "model": "Aliyun:qwen2.5-7b-instruct-1m"
         },
         {
-            "address": "Natl Taiwan Univ, Coll Med, Taipei 106, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Coll Med, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -16628,7 +16628,7 @@
             "model": "Aliyun:qwen-turbo-latest"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Bioind Commun & Dev, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Bioind Commun & Dev, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.033,
             "lng": 121.5654,
@@ -16636,7 +16636,7 @@
             "model": "Aliyun:qwen3-coder-480b-a35b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0338,
             "lng": 121.5655,
@@ -16644,7 +16644,7 @@
             "model": "Aliyun:tongyi-xiaomi-analysis-pro"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Lib & Informat Sci, 1 Sec 4,Roosevelt Rd, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03782,
             "lng": 121.56309,
@@ -16788,7 +16788,7 @@
             "model": "Aliyun:qwen2.5-coder-14b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Mech Engn, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.03297,
             "lng": 121.56542,
@@ -17276,7 +17276,7 @@
             "model": "Aliyun:qwen2.5-coder-32b-instruct"
         },
         {
-            "address": "Natl Arch Adm, Arch Serv Div, Taipei 10486, Taiwan(China)",
+            "address": "Natl Arch Adm, Arch Serv Div, Taipei 10486, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0333,
             "lng": 121.5167,
@@ -17484,7 +17484,7 @@
             "model": "Aliyun:qwen-coder-plus-latest"
         },
         {
-            "address": "Natl Taiwan Univ, Dept Bioind Commun & Dev, Taipei, Taiwan(China)",
+            "address": "Natl Taiwan Univ, Dept Bioind Commun & Dev, Taipei, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.032,
             "lng": 121.5654,
@@ -18484,7 +18484,7 @@
             "model": "Aliyun:qwen3-coder-flash"
         },
         {
-            "address": "Natl Taiwan Ocean Univ, Dept Mech & Mechatron Engn, Keelung, Taiwan(China)",
+            "address": "Natl Taiwan Ocean Univ, Dept Mech & Mechatron Engn, Keelung, Taiwan, Province of China",
             "name": "Keelung",
             "lat": 25.1333,
             "lng": 121.75,
@@ -18516,7 +18516,7 @@
             "model": "Aliyun:qwen-turbo-2025-04-28"
         },
         {
-            "address": "Natl Dong Hwa Univ, Dept Appl Math, Hualien 974, Taiwan(China)",
+            "address": "Natl Dong Hwa Univ, Dept Appl Math, Hualien 974, Taiwan, Province of China",
             "name": "Hualien",
             "lat": 23.9785,
             "lng": 121.604,
@@ -18572,7 +18572,7 @@
             "model": "Aliyun:qwen2.5-14b-instruct"
         },
         {
-            "address": "Natl Tsing Hua Univ, Dept Ind Engn & Engn Management, Hsinchu, Taiwan(China)",
+            "address": "Natl Tsing Hua Univ, Dept Ind Engn & Engn Management, Hsinchu, Taiwan, Province of China",
             "name": "Taichung",
             "lat": 24.14748,
             "lng": 120.6799,
@@ -18580,7 +18580,7 @@
             "model": "Aliyun:codeqwen1.5-7b-chat"
         },
         {
-            "address": "Natl Yang Ming Chiao Tung Univ, Dept Management Sci, New Taipei, Taiwan(China)",
+            "address": "Natl Yang Ming Chiao Tung Univ, Dept Management Sci, New Taipei, Taiwan, Province of China",
             "name": "New Taipei",
             "lat": 25.0113,
             "lng": 121.4678,
@@ -18756,7 +18756,7 @@
             "model": "Aliyun:qwen-turbo-2025-04-28"
         },
         {
-            "address": "Natl Cent Univ, Dept Informat Management, Taoyuan 320, Taiwan(China)",
+            "address": "Natl Cent Univ, Dept Informat Management, Taoyuan 320, Taiwan, Province of China",
             "name": "Taoyuan",
             "lat": 24.9713,
             "lng": 121.0865,
@@ -18764,7 +18764,7 @@
             "model": "Aliyun:qwen-flash"
         },
         {
-            "address": "Natl Chung Cheng Univ, Ctr Innovat Res Aging Soc, Chiayi 621, Taiwan(China)",
+            "address": "Natl Chung Cheng Univ, Ctr Innovat Res Aging Soc, Chiayi 621, Taiwan, Province of China",
             "name": "Chiayi",
             "lat": 23.4881,
             "lng": 120.4751,
@@ -18772,7 +18772,7 @@
             "model": "Aliyun:qwen-turbo-2024-11-01"
         },
         {
-            "address": "Natl Cheng Kung Univ, MOST AI Biomed Res Ctr, Tainan 701, Taiwan(China)",
+            "address": "Natl Cheng Kung Univ, MOST AI Biomed Res Ctr, Tainan 701, Taiwan, Province of China",
             "name": "Tainan",
             "lat": 23.0145,
             "lng": 120.3789,
@@ -18780,7 +18780,7 @@
             "model": "Aliyun:qwen3-30b-a3b-instruct-2507"
         },
         {
-            "address": "Natl Chung Cheng Univ, Dept Informat Management, Chiayi 621, Taiwan(China)",
+            "address": "Natl Chung Cheng Univ, Dept Informat Management, Chiayi 621, Taiwan, Province of China",
             "name": "Chiayi",
             "lat": 23.4761,
             "lng": 120.4784,
@@ -18788,7 +18788,7 @@
             "model": "Aliyun:qwen-turbo-latest"
         },
         {
-            "address": "Chiayi Chang Gung Mem Hosp, Chiayi 613, Taiwan(China)",
+            "address": "Chiayi Chang Gung Mem Hosp, Chiayi 613, Taiwan, Province of China",
             "name": "Chiayi",
             "lat": 23.4833,
             "lng": 120.45,
@@ -18796,7 +18796,7 @@
             "model": "Aliyun:qwen3-coder-480b-a35b-instruct"
         },
         {
-            "address": "Natl Taiwan Univ Taipei, Dept Agr Econ, Taipei 106, Taiwan(China)",
+            "address": "Natl Taiwan Univ Taipei, Dept Agr Econ, Taipei 106, Taiwan, Province of China",
             "name": "Taipei",
             "lat": 25.0338,
             "lng": 121.5655,

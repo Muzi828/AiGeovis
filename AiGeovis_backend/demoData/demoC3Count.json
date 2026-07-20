@@ -41,7 +41,7 @@
             "value": 123
         },
         {
-            "name": "Taiwan (China)",
+            "name": "Taiwan, Province of China",
             "value": 115
         },
         {
@@ -7030,14 +7030,14 @@
             "count": 8
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Central University",
             "lat": 24.9667,
             "lng": 121.3167,
             "count": 3
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Tsing Hua University",
             "lat": 24.7967,
             "lng": 120.9967,
@@ -7499,21 +7499,21 @@
             "count": 2
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Taiwan University of Science & Technology",
             "lat": 25.0143,
             "lng": 121.546,
             "count": 10
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Taiwan",
             "lat": 25.04891,
             "lng": 121.56542,
             "count": 18
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Taiwan University",
             "lat": 25.033,
             "lng": 121.5654,
@@ -9627,7 +9627,7 @@
             "count": 3
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Chung Yuan Christian University",
             "lat": 24.9694,
             "lng": 121.2667,
@@ -9809,7 +9809,7 @@
             "count": 5
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Yuan Ze University",
             "lat": 24.9876,
             "lng": 121.1056,
@@ -10439,7 +10439,7 @@
             "count": 3
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Yunlin University of Science and Technology",
             "lat": 23.6986,
             "lng": 120.4742,
@@ -11006,14 +11006,14 @@
             "count": 2
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Chaoyang University of Technology",
             "lat": 24.1367,
             "lng": 120.695,
             "count": 4
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Tamkang University",
             "lat": 25.17509,
             "lng": 121.66891,
@@ -11048,21 +11048,21 @@
             "count": 5
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Applied Research Laboratories",
             "lat": 24.81,
             "lng": 120.96,
             "count": 3
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Chung Hsing University",
             "lat": 24.1236,
             "lng": 120.6736,
             "count": 2
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Chengchi University",
             "lat": 25.04698,
             "lng": 121.51789,
@@ -11104,7 +11104,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Asia University",
             "lat": 24.1756,
             "lng": 120.7136,
@@ -11475,7 +11475,7 @@
             "count": 2
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Fu Jen Catholic University",
             "lat": 24.9876,
             "lng": 121.5837,
@@ -11797,7 +11797,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Academia Sinica",
             "lat": 25.03382,
             "lng": 121.56447,
@@ -12350,14 +12350,14 @@
             "count": 3
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Yang Ming Chiao Tung University",
             "lat": 24.8063,
             "lng": 120.957,
             "count": 2
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Laboratories",
             "lat": 25.033,
             "lng": 121.5654,
@@ -12770,7 +12770,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Taipei Medical University",
             "lat": 25.0733,
             "lng": 121.5319,
@@ -13078,7 +13078,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Taiwan University",
             "lat": 25.01735,
             "lng": 121.53974,
@@ -13141,7 +13141,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Pingtung University",
             "lat": 22.6849,
             "lng": 120.5322,
@@ -13316,7 +13316,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Taiwan Normal University",
             "lat": 25.03467,
             "lng": 121.56486,
@@ -13911,7 +13911,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Taiwan Ocean University",
             "lat": 24.1323,
             "lng": 121.8267,
@@ -13925,7 +13925,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Dong Hwa University",
             "lat": 23.9786,
             "lng": 121.6154,
@@ -13946,7 +13946,7 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Taiwan",
             "lat": 25.033,
             "lng": 121.5654,
@@ -13960,21 +13960,21 @@
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "National Chung Cheng University",
             "lat": 23.5782,
             "lng": 120.2694,
             "count": 2
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Cheng Kung University",
             "lat": 22.5937,
             "lng": 120.315,
             "count": 1
         },
         {
-            "country": "Taiwan (China)",
+            "country": "Taiwan, Province of China",
             "organization": "Chang Gung University",
             "lat": 25.0079,
             "lng": 121.296,

@@ -52,10 +52,11 @@ COUNTRY_NORMALIZE_MAP = {
     "uae": "United Arab Emirates",
 }
 
-# 中国台湾 / 香港 / 澳门：表述用国际通行附注形式；国家层计数不单独统计。
-# 英文官方拼写优先 Macao（联合国用语），兼容 Macau。
+# 中国台湾 / 香港 / 澳门：表述以中国外交部/联合国用语为准；国家层计数不单独统计。
+# 台湾：Taiwan, Province of China（中国台湾省）
+# 港澳：Hong Kong / Macao (China)；Macao 为联合国英文拼写，兼容 Macau。
 _CHINA_REGION_CANONICAL = {
-    "taiwan": "Taiwan (China)",
+    "taiwan": "Taiwan, Province of China",
     "hong kong": "Hong Kong (China)",
     "macao": "Macao (China)",
     "macau": "Macao (China)",
@@ -71,6 +72,12 @@ _CHINA_REGION_ALIASES = {
     "chinese taipei": "taiwan",
     "taiwan province of china": "taiwan",
     "taiwan, province of china": "taiwan",
+    "taiwan, province of china (china)": "taiwan",
+    "china taiwan": "taiwan",
+    "中国台湾": "taiwan",
+    "中国台湾省": "taiwan",
+    "台湾": "taiwan",
+    "台湾省": "taiwan",
     "roc": "taiwan",
     "republic of china": "taiwan",
     "hong kong": "hong kong",
@@ -134,7 +141,7 @@ def is_china_region_entity(name: str) -> bool:
 
 
 def canonical_china_region_name(name: str) -> Optional[str]:
-    """返回规范国际表述，如 Taiwan (China)；非此类地区返回 None。"""
+    """返回规范表述，如 Taiwan, Province of China；非此类地区返回 None。"""
     base = _china_region_key(name)
     if not base:
         return None
@@ -156,13 +163,14 @@ COUNTRY_COORDS.setdefault("hong kong", (22.32, 114.17))
 COUNTRY_COORDS.setdefault("macau", (22.20, 113.55))
 COUNTRY_COORDS.setdefault("macao", (22.20, 113.55))
 COUNTRY_COORDS.setdefault("taiwan (china)", (25.03, 121.57))
+COUNTRY_COORDS.setdefault("taiwan, province of china", (25.03, 121.57))
 COUNTRY_COORDS.setdefault("hong kong (china)", (22.32, 114.17))
 COUNTRY_COORDS.setdefault("macao (china)", (22.20, 113.55))
 COUNTRY_COORDS.setdefault("macau (china)", (22.20, 113.55))
 
 
 def _lookup_country_coords(name: str) -> Optional[Tuple[float, float]]:
-    """按国家名（已归一化）查询内置坐标表；兼容 "Taiwan (China)" 等后缀形式。"""
+    """按国家名（已归一化）查询内置坐标表；兼容台湾省及 (China) 后缀形式。"""
     if not name:
         return None
     key = name.strip().lower()
@@ -181,7 +189,8 @@ def _normalize_country(country: str) -> str:
     """
     标准化国家/地区名称。
 
-    对中国台湾、香港、澳门使用国际通行表述（Taiwan/Hong Kong/Macao (China)）；
+    中国台湾省：Taiwan, Province of China（外交部/联合国用语）；
+    香港、澳门：Hong Kong (China) / Macao (China)；
     国家层频次与共现统计另行排除这些实体，见 is_china_region_entity。
     """
     if not country:

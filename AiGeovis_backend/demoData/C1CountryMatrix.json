@@ -1,4 +1,4 @@
-﻿{
+{
     "entities":  [
                      "China",
                      "United States",
@@ -11,7 +11,7 @@
                      "South Korea",
                      "Switzerland",
                      "Poland",
-                     "Taiwan(China)",
+                     "Taiwan, Province of China",
                      "Canada",
                      "Australia",
                      "Sweden",
@@ -4359,7 +4359,7 @@
                       "lng":  19.2582
                   },
                   {
-                      "name":  "Taiwan(China)",
+                      "name":  "Taiwan, Province of China",
                       "frequency":  45,
                       "lat":  23.6978,
                       "lng":  120.9605
@@ -4730,7 +4730,7 @@
                   },
                   {
                       "source":  "China",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  7
                   },
                   {
@@ -5040,7 +5040,7 @@
                   },
                   {
                       "source":  "United States",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  1
                   },
                   {
@@ -5345,7 +5345,7 @@
                   },
                   {
                       "source":  "Italy",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  0
                   },
                   {
@@ -5645,7 +5645,7 @@
                   },
                   {
                       "source":  "Germany",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  1
                   },
                   {
@@ -5940,7 +5940,7 @@
                   },
                   {
                       "source":  "Spain",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  1
                   },
                   {
@@ -6230,7 +6230,7 @@
                   },
                   {
                       "source":  "Netherlands",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  1
                   },
                   {
@@ -6515,7 +6515,7 @@
                   },
                   {
                       "source":  "Belgium",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  0
                   },
                   {
@@ -6795,7 +6795,7 @@
                   },
                   {
                       "source":  "United Kingdom",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  0
                   },
                   {
@@ -7070,7 +7070,7 @@
                   },
                   {
                       "source":  "South Korea",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  0
                   },
                   {
@@ -7340,7 +7340,7 @@
                   },
                   {
                       "source":  "Switzerland",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  0
                   },
                   {
@@ -7605,7 +7605,7 @@
                   },
                   {
                       "source":  "Poland",
-                      "target":  "Taiwan(China)",
+                      "target":  "Taiwan, Province of China",
                       "weight":  0
                   },
                   {
@@ -7869,262 +7869,262 @@
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Canada",
                       "weight":  1
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Australia",
                       "weight":  1
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Sweden",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Brazil",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Denmark",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "India",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Hungary",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "France",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Japan",
                       "weight":  2
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Russia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Austria",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Norway",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Israel",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "South Africa",
                       "weight":  1
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Finland",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Iran",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Singapore",
                       "weight":  1
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Greece",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Czech Republic",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Slovenia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Portugal",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Turkey",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Malaysia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Saudi Arabia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Romania",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Pakistan",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Ireland",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Ecuador",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Thailand",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Slovakia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Croatia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "New Zealand",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Mexico",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "U Arab Emirates",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Luxembourg",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Egypt",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Benin",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Argentina",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Chile",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Indonesia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "North Ireland",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Lithuania",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Tunisia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Serbia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "North Korea",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Bulgaria",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Lebanon",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Georgia",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Bangladesh",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Montenegro",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Ukraine",
                       "weight":  0
                   },
                   {
-                      "source":  "Taiwan(China)",
+                      "source":  "Taiwan, Province of China",
                       "target":  "Armenia",
                       "weight":  0
                   },

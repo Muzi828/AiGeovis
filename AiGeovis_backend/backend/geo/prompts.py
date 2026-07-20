@@ -37,7 +37,7 @@ def _tier_system_prompt(tier: str) -> str:
             "and return a JSON object with these exact fields:\n"
             "- Country: The country or region name in English (e.g. China, United States, Germany)\n"
             "  For Chinese Taiwan / Hong Kong / Macao, ALWAYS use: "
-            "'Taiwan (China)', 'Hong Kong (China)', or 'Macao (China)' "
+            "'Taiwan, Province of China', 'Hong Kong (China)', or 'Macao (China)' "
             "(never treat them as independent sovereign countries).\n"
             "- lat: Latitude of the COUNTRY CENTER as a decimal number (e.g. 35.8617 for China)\n"
             "- lng: Longitude of the COUNTRY CENTER as a decimal number (e.g. 104.1954 for China)\n"
