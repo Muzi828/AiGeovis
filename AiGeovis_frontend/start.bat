@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title Geocode Web - Frontend
+title AiGeovis - Frontend
 
 cd /d "%~dp0"
 

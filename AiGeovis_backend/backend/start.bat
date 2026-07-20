@@ -1,10 +1,10 @@
 @echo off
 chcp 65001 >nul
-title Geocode Web 后端
+title AiGeovis 后端
 echo ============================================
-echo   Geocode Web API 后端启动
-echo   地址: http://localhost:8000
-echo   文档: http://localhost:8000/docs
+echo   AiGeovis API 后端启动
+echo   地址: http://localhost:35696
+echo   文档: http://localhost:35696/docs
 echo ============================================
 echo.
 

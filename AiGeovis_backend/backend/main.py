@@ -1,4 +1,4 @@
-"""Geocode Web API entrypoint."""
+"""AiGeovis API entrypoint."""
 from app.factory import create_app
 
 app = create_app()

@@ -29,10 +29,10 @@ def create_app() -> FastAPI:
     _apply_json_nan_patch()
 
     app = FastAPI(
-        title="Geocode Web API",
+        title="AiGeovis",
         version="1.2.0",
         description=(
-            "Backend API for WoS data loading, C1/C3 address geo-parsing "
+            "AiGeovis backend API for WoS data loading, C1/C3 address geo-parsing "
             "(multi-model, parallel), and geocoding. Country/organization lookups "
             "are matched against a read-only reference library first (incremental "
             "matching); only unmatched names are sent to the LLM, or all names when "
