@@ -35,10 +35,22 @@ systemctl enable docker --now || true
 
 echo "==> Web root: ${WEB_ROOT}"
 mkdir -p "${WEB_ROOT}" /var/www/certbot
-if [[ -d "${APP_ROOT}/AiGeovis_frontend/dist" ]]; then
-  rsync -a --delete "${APP_ROOT}/AiGeovis_frontend/dist/" "${WEB_ROOT}/"
+if [[ -d "${APP_ROOT}/deploy/www" ]]; then
+  if command -v rsync >/dev/null 2>&1; then
+    rsync -a --delete "${APP_ROOT}/deploy/www/" "${WEB_ROOT}/"
+  else
+    rm -rf "${WEB_ROOT:?}/"*
+    cp -a "${APP_ROOT}/deploy/www/." "${WEB_ROOT}/"
+  fi
+elif [[ -d "${APP_ROOT}/AiGeovis_frontend/dist" ]]; then
+  if command -v rsync >/dev/null 2>&1; then
+    rsync -a --delete "${APP_ROOT}/AiGeovis_frontend/dist/" "${WEB_ROOT}/"
+  else
+    rm -rf "${WEB_ROOT:?}/"*
+    cp -a "${APP_ROOT}/AiGeovis_frontend/dist/." "${WEB_ROOT}/"
+  fi
 elif [[ -d "${APP_ROOT}/dist" ]]; then
-  rsync -a --delete "${APP_ROOT}/dist/" "${WEB_ROOT}/"
+  cp -a "${APP_ROOT}/dist/." "${WEB_ROOT}/"
 else
   echo "WARN: frontend dist not found under ${APP_ROOT}; upload dist first."
 fi
