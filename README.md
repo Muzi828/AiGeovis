@@ -43,17 +43,23 @@
 
 <p align="center"><b>Main workspace · 2D collaboration map</b></p>
 <p align="center">
-  <img src="docs/assets/ui-2d-map.png" width="92%" alt="AiGeovis 2D map workspace"/>
+  <a href="docs/assets/ui-2d-map.png">
+    <img src="docs/assets/ui-2d-map.png" width="640" alt="AiGeovis 2D map workspace"/>
+  </a>
 </p>
 
 <p align="center"><b>3D globe · country / region network</b></p>
 <p align="center">
-  <img src="docs/assets/ui-3d-globe.png" width="92%" alt="AiGeovis 3D globe"/>
+  <a href="docs/assets/ui-3d-globe.png">
+    <img src="docs/assets/ui-3d-globe.png" width="640" alt="AiGeovis 3D globe"/>
+  </a>
 </p>
 
 <p align="center"><b>Raw data table · imported WoS records</b></p>
 <p align="center">
-  <img src="docs/assets/ui-raw-table.png" width="92%" alt="AiGeovis raw data table"/>
+  <a href="docs/assets/ui-raw-table.png">
+    <img src="docs/assets/ui-raw-table.png" width="640" alt="AiGeovis raw data table"/>
+  </a>
 </p>
 
 ---
@@ -64,20 +70,22 @@
 
 | AiGeovis | Web of Science |
 |:--------:|:--------------:|
-| <img src="docs/assets/map-countries-aigeovis.png" width="100%" alt="Countries — AiGeovis"/> | <img src="docs/assets/map-countries-wos.png" width="100%" alt="Countries — WoS"/> |
+| <a href="docs/assets/map-countries-aigeovis.png"><img src="docs/assets/map-countries-aigeovis.png" width="420" alt="Countries — AiGeovis"/></a> | <a href="docs/assets/map-countries-wos.png"><img src="docs/assets/map-countries-wos.png" width="420" alt="Countries — WoS"/></a> |
 
 <p align="center"><b>Organizations</b></p>
 
 | AiGeovis | Web of Science |
 |:--------:|:--------------:|
-| <img src="docs/assets/map-affiliations-aigeovis.png" width="100%" alt="Affiliations — AiGeovis"/> | <img src="docs/assets/map-affiliations-wos.png" width="100%" alt="Affiliations — WoS"/> |
+| <a href="docs/assets/map-affiliations-aigeovis.png"><img src="docs/assets/map-affiliations-aigeovis.png" width="420" alt="Affiliations — AiGeovis"/></a> | <a href="docs/assets/map-affiliations-wos.png"><img src="docs/assets/map-affiliations-wos.png" width="420" alt="Affiliations — WoS"/></a> |
 
 ---
 
 ## Features
 
 <p align="center">
-  <img src="docs/assets/fig5-pipeline.png" width="96%" alt="AiGeovis processing pipeline (Fig. 5)"/>
+  <a href="docs/assets/fig5-pipeline.png">
+    <img src="docs/assets/fig5-pipeline.png" width="720" alt="AiGeovis processing pipeline (Fig. 5)"/>
+  </a>
 </p>
 
 <p align="center">

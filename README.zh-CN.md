@@ -43,17 +43,23 @@
 
 <p align="center"><b>主工作台 · 二维合作网络地图</b></p>
 <p align="center">
-  <img src="docs/assets/ui-2d-map.png" width="92%" alt="AiGeovis 二维地图工作台"/>
+  <a href="docs/assets/ui-2d-map.png">
+    <img src="docs/assets/ui-2d-map.png" width="640" alt="AiGeovis 二维地图工作台"/>
+  </a>
 </p>
 
 <p align="center"><b>三维地球 · 国家 / 地区网络</b></p>
 <p align="center">
-  <img src="docs/assets/ui-3d-globe.png" width="92%" alt="AiGeovis 三维地球"/>
+  <a href="docs/assets/ui-3d-globe.png">
+    <img src="docs/assets/ui-3d-globe.png" width="640" alt="AiGeovis 三维地球"/>
+  </a>
 </p>
 
 <p align="center"><b>原始数据表 · 已导入的 WoS 记录</b></p>
 <p align="center">
-  <img src="docs/assets/ui-raw-table.png" width="92%" alt="AiGeovis 原始数据表"/>
+  <a href="docs/assets/ui-raw-table.png">
+    <img src="docs/assets/ui-raw-table.png" width="640" alt="AiGeovis 原始数据表"/>
+  </a>
 </p>
 
 ---
@@ -64,20 +70,22 @@
 
 | AiGeovis | Web of Science |
 |:--------:|:--------------:|
-| <img src="docs/assets/map-countries-aigeovis.png" width="100%" alt="国家 — AiGeovis"/> | <img src="docs/assets/map-countries-wos.png" width="100%" alt="国家 — WoS"/> |
+| <a href="docs/assets/map-countries-aigeovis.png"><img src="docs/assets/map-countries-aigeovis.png" width="420" alt="国家 — AiGeovis"/></a> | <a href="docs/assets/map-countries-wos.png"><img src="docs/assets/map-countries-wos.png" width="420" alt="国家 — WoS"/></a> |
 
 <p align="center"><b>机构分布对比</b></p>
 
 | AiGeovis | Web of Science |
 |:--------:|:--------------:|
-| <img src="docs/assets/map-affiliations-aigeovis.png" width="100%" alt="机构 — AiGeovis"/> | <img src="docs/assets/map-affiliations-wos.png" width="100%" alt="机构 — WoS"/> |
+| <a href="docs/assets/map-affiliations-aigeovis.png"><img src="docs/assets/map-affiliations-aigeovis.png" width="420" alt="机构 — AiGeovis"/></a> | <a href="docs/assets/map-affiliations-wos.png"><img src="docs/assets/map-affiliations-wos.png" width="420" alt="机构 — WoS"/></a> |
 
 ---
 
 ## 功能特性
 
 <p align="center">
-  <img src="docs/assets/fig5-pipeline.png" width="96%" alt="AiGeovis 处理流水线（图 5）"/>
+  <a href="docs/assets/fig5-pipeline.png">
+    <img src="docs/assets/fig5-pipeline.png" width="720" alt="AiGeovis 处理流水线（图 5）"/>
+  </a>
 </p>
 
 <p align="center">
