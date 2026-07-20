@@ -83,13 +83,13 @@
 ## Features
 
 <p align="center">
-  <a href="docs/assets/fig5-pipeline.png">
-    <img src="docs/assets/fig5-pipeline.png" width="720" alt="AiGeovis processing pipeline (Fig. 5)"/>
+  <a href="docs/assets/fig1-workflow.svg">
+    <img src="docs/assets/fig1-workflow.svg" width="900" alt="AiGeovis processing pipeline"/>
   </a>
 </p>
 
 <p align="center">
-  <sub>Figure 5. AiGeovis processing pipeline and dual-channel geoparsing design</sub>
+  <sub>AiGeovis processing pipeline and dual-channel geoparsing design</sub>
 </p>
 
 - **Multi-source ingest**: WoS exports, local address CSV, one-click demo / custom samples

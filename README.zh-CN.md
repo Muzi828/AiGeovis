@@ -83,13 +83,13 @@
 ## 功能特性
 
 <p align="center">
-  <a href="docs/assets/fig5-pipeline.png">
-    <img src="docs/assets/fig5-pipeline.png" width="720" alt="AiGeovis 处理流水线（图 5）"/>
+  <a href="docs/assets/fig1-workflow.svg">
+    <img src="docs/assets/fig1-workflow.svg" width="900" alt="AiGeovis 处理流水线"/>
   </a>
 </p>
 
 <p align="center">
-  <sub>图 5. AiGeovis 处理流水线与双通道地理解析设计</sub>
+  <sub>AiGeovis 处理流水线与双通道地理解析设计</sub>
 </p>
 
 - **多源加载**：WoS 导出文件、本地地址 CSV、一键 Demo / 自定义案例
