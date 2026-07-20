@@ -1,14 +1,16 @@
 import axios from 'axios'
 
 const BACKEND_PORT = 35696
-const PROD_API_BASE = 'https://smartdata.las.ac.cn/AiGeovis/AiGeovis/AiGeovis_api/api'
+/** 生产默认走同域 Nginx 反代（https://ai4safe.cn/api）；可用 VITE_API_BASE_URL 覆盖。 */
+const PROD_API_BASE = '/api'
 
 /**
  * 局域网/本机：跟随页面 hostname，保证用 10.x / 192.168.x 打开前端时 API 也打到同一台机器。
- * 可用 VITE_API_BASE_URL 强制覆盖；生产域名走线上地址。
+ * 生产域名使用同域 /api（由 Nginx 反代到后端）。
  */
 function resolveApiBaseUrl() {
   const envUrl = (import.meta.env.VITE_API_BASE_URL || '').trim()
+  if (envUrl) return envUrl
   if (typeof window !== 'undefined') {
     const host = window.location.hostname || ''
     const isLocalOrLan =
@@ -19,7 +21,6 @@ function resolveApiBaseUrl() {
       return `http://${host}:${BACKEND_PORT}/api`
     }
   }
-  if (envUrl) return envUrl
   return PROD_API_BASE
 }
 

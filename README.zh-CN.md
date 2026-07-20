@@ -227,9 +227,11 @@ CSV 需包含：`coords_countries.csv`、`coords_affiliations.csv`、`coords_aff
 | 项 | 值 |
 |----|----|
 | 线上演示 | [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home) |
-| 前端地址 | `http://<host>:8939/AiGeovis/` |
+| 生产站（ai4safe.cn） | [https://ai4safe.cn/](https://ai4safe.cn/) · 见 [`deploy/README.md`](deploy/README.md) |
+| 前端地址（开发） | `http://<host>:8939/` |
 | 后端地址 | `http://<host>:35696` |
 | API Base（开发） | `http://<host>:35696/api` |
+| API Base（生产） | `/api`（Nginx 反代到 `:35696`） |
 | Vite 代理 | `/api` → `127.0.0.1:35696` |
 | 跳过登录 | `VITE_DISABLE_AUTH=true` |
 

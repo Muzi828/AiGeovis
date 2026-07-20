@@ -27,3 +27,6 @@
 **/*.log
 **/tmp/
 **/temp/
+
+# Local deploy packaging (built by deploy/pack-release.ps1)
+deploy/release/

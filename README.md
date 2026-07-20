@@ -226,9 +226,11 @@ That directory usually lives outside the repo and is unrelated to `demoData/`. L
 | Item | Value |
 |----|----|
 | Online demo | [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home) |
-| Frontend URL | `http://<host>:8939/AiGeovis/` |
+| Production (ai4safe.cn) | [https://ai4safe.cn/](https://ai4safe.cn/) · see [`deploy/README.md`](deploy/README.md) |
+| Frontend URL (dev) | `http://<host>:8939/` |
 | Backend URL | `http://<host>:35696` |
 | API Base (dev) | `http://<host>:35696/api` |
+| API Base (prod) | `/api` (Nginx → `:35696`) |
 | Vite proxy | `/api` → `127.0.0.1:35696` |
 | Auth bypass | `VITE_DISABLE_AUTH=true` |
 
