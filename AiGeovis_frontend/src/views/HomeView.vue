@@ -3817,7 +3817,7 @@ async function doExportGml() {
   if (!ensureLoggedIn()) return
   if (demoMode.value) {
     const filename = getCurrentGmlFilename()
-    const url = `/api/demo/gml/download?filename=${encodeURIComponent(filename)}`
+    const url = `https://smartdata.las.ac.cn/AiGeovis/AiGeovis/AiGeovis_api/api/demo/gml/download?filename=${encodeURIComponent(filename)}`
     window.open(url, '_blank', 'noopener')
     return
   }

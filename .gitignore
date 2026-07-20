@@ -27,10 +27,3 @@
 **/*.log
 **/tmp/
 **/temp/
-
-# Local deploy packaging (built by deploy/pack-release.ps1)
-deploy/release/
-
-# Production static build is tracked under deploy/www/ (force-added)
-!deploy/www/
-!deploy/www/**
