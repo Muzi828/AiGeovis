@@ -31,7 +31,7 @@
 
 ## Overview
 
-**AiGeovis** 把 Web of Science（WoS）导出记录中的作者地址（C1 / C3）解析为国家、机构、城市等地理实体，并在 2D / 3D 地图上展示分布、热力与合作连线。适合文献计量、科研合作网络、机构/国家空间分布等场景。内置 Demo 数据，可零上传先体验全流程。
+**AiGeovis** 把 Web of Science（WoS）导出记录中的作者地址（C1 / C3）解析为国家、机构、城市等地理实体，并补全经纬度坐标（参考库匹配 + 多模型 LLM 地理解析，必要时地理编码兜底），再在 2D / 3D 地图上展示分布、热力与合作连线。适合文献计量、科研合作网络、机构/国家空间分布等场景。内置 Demo 数据，可零上传先体验全流程。
 
 **Online demo（已部署）：** [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home)
 
