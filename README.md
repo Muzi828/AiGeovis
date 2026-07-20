@@ -37,7 +37,7 @@
 
 ## Overview
 
-**AiGeovis** parses author addresses (C1 / C3) from Web of Science (WoS) export records into geographic entities (country, organization, city), **fills in latitude / longitude** (reference-library match + multi-model LLM geoparsing, with deterministic geocoding fallback when needed), and visualizes distributions, heatmaps, and collaboration links on 2D / 3D maps. It fits bibliometrics, research collaboration networks, and spatial analysis of institutions or countries. Built-in demo data lets you try the full pipeline without uploading files.
+AiGeovis parses author affiliations (C1 / C3) from records exported by Web of Science (WoS) into geographic entities including countries, institutions and cities, and complements their corresponding longitude and latitude coordinates. This is implemented via reference database matching combined with multi-model LLM-based geographic parsing, with geocoding adopted as a fallback when necessary. The tool further visualizes distribution patterns, heatmaps and collaborative links on both 2D and 3D maps. It fits research scenarios such as bibliometric analysis, scientific collaboration network construction, and spatial distribution analysis of institutions or countries. Preloaded demo data is provided to enable users to experience the full workflow without uploading custom datasets.
 
 **Online demo:** [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home)
 
