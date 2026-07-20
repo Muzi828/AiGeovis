@@ -2,8 +2,6 @@
   <img src="docs/assets/logo.png" alt="AiGeovis" width="280"/>
 </p>
 
-<h1 align="center">AiGeovis</h1>
-
 <p align="center">
   <b>AI-assisted geocoding &amp; collaboration-map visualization for Web of Science records</b><br/>
   面向 WoS 文献地址的智能地理解析与合作网络可视化工具
