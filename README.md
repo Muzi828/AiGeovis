@@ -83,8 +83,8 @@ AiGeovis parses author affiliations (C1 / C3) from records exported by Web of Sc
 ## Features
 
 <p align="center">
-  <a href="docs/assets/fig1-workflow.svg">
-    <img src="docs/assets/fig1-workflow.svg" width="900" alt="AiGeovis processing pipeline"/>
+  <a href="docs/assets/fig1-workflow.png">
+    <img src="docs/assets/fig1-workflow.png" width="900" alt="AiGeovis processing pipeline"/>
   </a>
 </p>
 
