@@ -31,15 +31,9 @@
 
 ## Overview
 
-**AiGeovis** 把 Web of Science（WoS）导出记录中的作者地址（C1 / C3）解析为国家、机构、城市等地理实体，并在 2D / 3D 地图上展示分布、热力与合作连线。
+**AiGeovis** 把 Web of Science（WoS）导出记录中的作者地址（C1 / C3）解析为国家、机构、城市等地理实体，并在 2D / 3D 地图上展示分布、热力与合作连线。适合文献计量、科研合作网络、机构/国家空间分布等场景。内置 Demo 数据，可零上传先体验全流程。
 
 **Online demo（已部署）：** [https://smartdata.las.ac.cn/AiGeovis/#/home](https://smartdata.las.ac.cn/AiGeovis/#/home)
-
-| 输入 | 处理 | 输出 |
-|:----:|:----:|:----:|
-| WoS TXT / CSV / 本地地址表 | 参考库匹配 → 多模型 LLM 解析 → 地理编码补全 | 解析结果表 · 实体矩阵 · 地图可视化 · GML |
-
-适合文献计量、科研合作网络、机构/国家空间分布等场景；内置 Demo 数据，可零上传先体验全流程。
 
 <p align="center"><b>Main workspace · 2D collaboration map</b></p>
 <p align="center">
@@ -58,7 +52,7 @@
 
 ---
 
-## Gallery
+## Verified Results
 
 <p align="center"><b>国家 / 地区分布对比</b></p>
 
@@ -72,7 +66,6 @@
 |:--------:|:--------------:|
 | <img src="docs/assets/map-affiliations-aigeovis.png" width="100%" alt="Affiliations — AiGeovis"/> | <img src="docs/assets/map-affiliations-wos.png" width="100%" alt="Affiliations — WoS"/> |
 
-> 对照样例来自仓库 `Verified Results/`，便于复现与论文插图引用。
 
 ---
 
@@ -97,45 +90,6 @@
 
 ---
 
-## Architecture
-
-```mermaid
-flowchart LR
-  subgraph Client["Frontend · Vue 3 + Vite :8939"]
-    UI[HomeView]
-    MAP[ECharts / ECharts-GL]
-    UI --> MAP
-  end
-
-  subgraph API["Backend · FastAPI :35696"]
-    R[API Routers]
-    P[Parse Jobs]
-    M[Matrix / Viz / GML]
-    R --> P
-    R --> M
-  end
-
-  subgraph Data["Data Layer"]
-    DEMO[(demoData/)]
-    CACHE[(affiliation_cache.db)]
-    SESS[(In-memory Session)]
-  end
-
-  UI -->|HTTP /api| R
-  P --> CACHE
-  P --> SESS
-  R --> DEMO
-  M --> SESS
-```
-
-| 层级 | 技术 | 默认端口 |
-|------|------|----------|
-| Frontend | Vue 3 · Vite · Element Plus · ECharts | `8939`（`base=/AiGeovis/`） |
-| Backend | FastAPI · Uvicorn · Pandas · metaknowledge | `35696` |
-| Demo | `AiGeovis_backend/demoData/` | — |
-| Reference DB | `backend/affiliation_cache.db`（可重建） | — |
-
----
 
 ## Quick Start
 
