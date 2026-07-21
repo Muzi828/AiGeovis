@@ -228,8 +228,6 @@ python build_reference_db.py ../../GeoAff-Bench/full_scale/deepseek-v4-pro
 # python build_reference_db.py /path/to/GeoAff-Bench/full_scale/deepseek-v4-pro
 ```
 
-This CSV set is separate from `demoData/` (demo samples only). Large `affiliation_cache.db` files are gitignored.
-
 ---
 
 ## Configuration Cheatsheet

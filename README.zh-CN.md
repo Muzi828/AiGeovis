@@ -229,8 +229,6 @@ python build_reference_db.py ../../GeoAff-Bench/full_scale/deepseek-v4-pro
 # python build_reference_db.py /path/to/GeoAff-Bench/full_scale/deepseek-v4-pro
 ```
 
-上述 CSV 与 `demoData/`（仅演示样例）无关。体积较大的 `affiliation_cache.db` 已在 `.gitignore` 中忽略。
-
 ---
 
 ## 配置速查
