@@ -2,9 +2,7 @@
 """
 构建 Affiliation 只读参考库 affiliation_cache.db。
 
-数据来源：GeoAff-Bench 全量坐标集（deepseek-v4-pro）三份 CSV
-    仓库：https://github.com/Muzi828/GeoAff-Bench
-    目录：full_scale/deepseek-v4-pro/
+数据来源：deepseek-v4-pro 全量坐标数据集的三份 CSV
     - coords_countries.csv    国家/地区 → 经纬度
     - coords_affiliations.csv 机构（WoS C3 缩写大写名） → 经纬度
     - coords_affil_dept.csv   机构（含院系，Title Case 全称） → 经纬度
@@ -41,18 +39,12 @@ except Exception:
 BACKEND_DIR = Path(__file__).resolve().parent
 CACHE_DB = BACKEND_DIR / "affiliation_cache.db"
 
-# 离线重建 affiliation_cache.db 时的默认 CSV 目录（GeoAff-Bench，不在本仓库内；
+# 离线重建 affiliation_cache.db 时的默认 CSV 目录（不在本仓库内；
 # 运行时可传参覆盖：python build_reference_db.py <csv_dir>）。
 # 与前端/后端运行时使用的 demoData 示例数据无关。
-# 仓库根 = .../AiGeovis_code；常见并列克隆 = .../GeoData/GeoAff-Bench
-_REPO_ROOT = BACKEND_DIR.parent.parent
-_CANDIDATE_CSV_DIRS = (
-    Path(r"d:\Work\Papers\GeoData\GeoAff-Bench\full_scale\deepseek-v4-pro"),
-    _REPO_ROOT.parent.parent / "GeoAff-Bench" / "full_scale" / "deepseek-v4-pro",
-    _REPO_ROOT.parent / "GeoAff-Bench" / "full_scale" / "deepseek-v4-pro",
-    Path(r"d:\Work\Papers\GeoData\论文稿件\AiGeovis数据论文交付\全量坐标数据集\deepseek-v4-pro"),
+DEFAULT_CSV_DIR = Path(
+    r"d:\Work\Papers\GeoData\论文稿件\AiGeovis数据论文交付\全量坐标数据集\deepseek-v4-pro"
 )
-DEFAULT_CSV_DIR = next((p for p in _CANDIDATE_CSV_DIRS if p.is_dir()), _CANDIDATE_CSV_DIRS[0])
 
 # (文件名, 类别标签, 优先级)  —— 优先级数字越小越优先
 CSV_SOURCES = [
