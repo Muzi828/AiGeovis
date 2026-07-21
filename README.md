@@ -234,17 +234,6 @@ That directory usually lives outside the repo and is unrelated to `demoData/`. L
 
 ---
 
-## Citation
-
-If AiGeovis helps your research, please cite the related paper (DOI to be added after publication). Verification samples:
-
-```text
-Verified Results/Result/
-Verified Results/SoftwareX_2025_450/
-```
-
----
-
 ## License
 
 This project is released under the [Apache License 2.0](LICENSE).

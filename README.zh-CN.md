@@ -235,17 +235,6 @@ CSV 需包含：`coords_countries.csv`、`coords_affiliations.csv`、`coords_aff
 
 ---
 
-## 引用
-
-若本工具对你的研究有帮助，请引用相关论文（发表后在此补充 DOI）。验证样例见：
-
-```text
-Verified Results/Result/
-Verified Results/SoftwareX_2025_450/
-```
-
----
-
 ## 许可证
 
 本项目采用 [Apache License 2.0](LICENSE) 开源协议。
