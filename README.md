@@ -26,9 +26,8 @@
   <a href="#verified-results">Verified Results</a> ·
   <a href="#features">Features</a> ·
   <a href="#quick-start">Quick Start</a> ·
-  <a href="#project-layout">Project Layout</a> ·
   <a href="#api">API</a> ·
-  <a href="#docker">Docker</a> ·
+  <a href="#rebuild-reference-database">Rebuild Reference Database</a> ·
   <a href="#configuration-cheatsheet">Configuration</a> ·
   <a href="#license">License</a>
 </p>
