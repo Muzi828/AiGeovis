@@ -210,15 +210,26 @@ curl http://localhost:35696/api/health
 
 ## 重建参考库
 
-运行时解析会只读查询 `backend/affiliation_cache.db`。若需从全量坐标 CSV **重建**该库：
+运行时解析会只读查询 `backend/affiliation_cache.db`。全量坐标 CSV 来自 **[GeoAff-Bench](https://github.com/Muzi828/GeoAff-Bench)** 仓库的 `full_scale/deepseek-v4-pro/`，用于 **重建** 该参考库。
+
+该目录需包含：
+
+- `coords_countries.csv`
+- `coords_affiliations.csv`
+- `coords_affil_dept.csv`
 
 ```bash
+# 1) 获取 GeoAff-Bench（可与本仓库并列克隆，或其他本地路径）
+git clone https://github.com/Muzi828/GeoAff-Bench.git
+
+# 2) 构建 AiGeovis 使用的 SQLite 参考库
 cd AiGeovis_backend/backend
-python build_reference_db.py <path-to-csv-dir>
+python build_reference_db.py ../../GeoAff-Bench/full_scale/deepseek-v4-pro
+# 或使用绝对路径，例如：
+# python build_reference_db.py /path/to/GeoAff-Bench/full_scale/deepseek-v4-pro
 ```
 
-CSV 需包含：`coords_countries.csv`、`coords_affiliations.csv`、`coords_affil_dept.csv`。  
-该目录通常位于仓库外；与 `demoData/` 示例数据无关。大文件默认已在 `.gitignore` 中忽略。
+上述 CSV 与 `demoData/`（仅演示样例）无关。体积较大的 `affiliation_cache.db` 已在 `.gitignore` 中忽略。
 
 ---
 

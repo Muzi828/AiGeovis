@@ -209,15 +209,26 @@ See [`AiGeovis_backend/DEPLOY.md`](AiGeovis_backend/DEPLOY.md).
 
 ## Rebuild Reference Database
 
-Runtime parsing reads `backend/affiliation_cache.db` (read-only). To **rebuild** it from full coordinate CSVs:
+Runtime parsing reads `backend/affiliation_cache.db` (read-only). Rebuild it from the full-scale coordinate CSVs published in **[GeoAff-Bench](https://github.com/Muzi828/GeoAff-Bench)** (`full_scale/deepseek-v4-pro/`).
+
+Required files in that folder:
+
+- `coords_countries.csv`
+- `coords_affiliations.csv`
+- `coords_affil_dept.csv`
 
 ```bash
+# 1) Get GeoAff-Bench (sibling clone or any local path)
+git clone https://github.com/Muzi828/GeoAff-Bench.git
+
+# 2) Build the SQLite reference DB used by AiGeovis
 cd AiGeovis_backend/backend
-python build_reference_db.py <path-to-csv-dir>
+python build_reference_db.py ../../GeoAff-Bench/full_scale/deepseek-v4-pro
+# or an absolute path, e.g.:
+# python build_reference_db.py /path/to/GeoAff-Bench/full_scale/deepseek-v4-pro
 ```
 
-Required files: `coords_countries.csv`, `coords_affiliations.csv`, `coords_affil_dept.csv`.  
-That directory usually lives outside the repo and is unrelated to `demoData/`. Large DB files are ignored via `.gitignore`.
+This CSV set is separate from `demoData/` (demo samples only). Large `affiliation_cache.db` files are gitignored.
 
 ---
 
